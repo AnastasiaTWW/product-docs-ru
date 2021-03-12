@@ -1,0 +1,8 @@
+site_name: faq
+
+nav:
+  - Совместимость Валарм WAF с версиями NGINX: waf-nginx-compatibility.md
+  - Установка Валарм WAF в AWS с использованием Terraform: waf-aws-via-terraform-installation.md 
+  - Установка Ingress‑контроллера Валарм WAF: waf-ingress-installation.md
+  - Ошибки после установки Валарм WAF: common-errors-after-waf-installation.md
+  - Страница со статусами сервисов Валарм: wallarm-status-page.md

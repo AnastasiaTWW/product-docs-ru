@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/allocate-resources-for-waf-node.md"

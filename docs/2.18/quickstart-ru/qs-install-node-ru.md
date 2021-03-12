@@ -1,0 +1,1 @@
+--8<-- "latest/quickstart-ru/qs-install-node-ru.md"

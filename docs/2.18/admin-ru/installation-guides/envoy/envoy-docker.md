@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/installation-guides/envoy/envoy-docker.md"

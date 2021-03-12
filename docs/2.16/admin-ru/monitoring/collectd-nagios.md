@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/monitoring/collectd-nagios.md"

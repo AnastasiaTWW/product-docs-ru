@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/sso/change-sso-provider.md"

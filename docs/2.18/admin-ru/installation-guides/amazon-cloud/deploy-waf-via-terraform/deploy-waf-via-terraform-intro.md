@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md"

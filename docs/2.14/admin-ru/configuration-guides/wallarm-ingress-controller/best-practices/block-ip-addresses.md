@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/block-ip-addresses.md"

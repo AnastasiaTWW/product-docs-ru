@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/configure-block-page-and-code.md"

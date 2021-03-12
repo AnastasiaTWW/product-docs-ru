@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configure-cloud-node-synchronization-ru.md"

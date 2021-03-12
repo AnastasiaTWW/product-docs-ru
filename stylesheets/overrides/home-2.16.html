@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  <p>Валарм WAF обладает неограниченным горизонтальным масштабированием и защищает веб-приложения и API от угроз OWASP Top 10, ботов, атак на логику приложения и других угроз.</p>
+
+  <div class="admonition info"> <p class="admonition-title">Доступно обновление</p> <p>Рекомендуем обновить модули Валарм WAF до последней версии с поддержкой <a href="../updating-migrating/what-is-new/">новых возможностей</a>. Для обновления до версии 2.18, используйте <a href="../updating-migrating/general-recommendations/">инструкцию</a>.</p> </div>
+
+  <div class="navigation">
+    <a href="../updating-migrating/what-is-new/" class="navigation-card">
+        <h3>Обновление до последней версии</h3>
+        <p>Изучите новые возможности WAF 2.18 и примените обновления к установленным компонентам</p>
+    </a>
+
+    <a href="./quickstart-ru/qs-install-node-ru/" class="navigation-card">
+        <h3>Быстрый старт</h3>
+        <p>Установите первую WAF‑ноду как модуль NGINX за 20 минут</p>
+    </a>
+    <a href="./about-wallarm-waf/overview/" class="navigation-card">
+        <h3>Обзор Валарм WAF</h3>
+        <p>Изучите возможности Валарм WAF, архитектуру продукта и набор поддерживаемых платформ</p>
+    </a>
+
+    <a href="./admin-ru/supported-platforms/" class="navigation-card">
+        <h3>Установка</h3>
+        <p>Выберите платформу и разверните первую WAF‑ноду в ифраструктуре вашего приложения</p>
+    </a>
+    <a href="./admin-ru/configure-parameters-ru/" class="navigation-card">
+        <h3>Настройка</h3>
+        <p>Расширьте возможности Валарм WAF с кастомными настройками развернутой WAF‑ноды</p>
+    </a>  
+
+    <a href="./api/overview/" class="navigation-card">
+        <h3>Валарм API</h3>
+        <p>Узнайте об использовании Валарм API для расширения функциональности Валарм WAF</p>
+    </a>
+    <a href="./user-guides/user-intro/" class="navigation-card">
+        <h3>Управление WAF через интерфейс</h3>
+        <p>Отслеживайте состояние безопасности вашей системы и управляйте WAF‑нодой вместе с командой через Консоль управления Валарм</p>
+    </a>  
+
+    <a href="./attacks-vulns-list/" class="navigation-card">
+        <h3>Типы атак и уязвимостей</h3>
+        <p>Изучите атаки и уязвимости, которые может обнаружить WAF‑нода</p>
+    </a>
+  </div>
+
+{% endblock %}

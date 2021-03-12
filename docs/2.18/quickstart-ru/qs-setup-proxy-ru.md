@@ -1,0 +1,1 @@
+--8<-- "latest/quickstart-ru/qs-setup-proxy-ru.md"

@@ -1,0 +1,312 @@
+site_name: Документация Валарм
+site_url: https://docs.wallarm.ru/
+site_description: Валарм WAF обладает неограниченным горизонтальным масштабированием и защищает веб-приложения и API от угроз OWASP Top 10, ботов, атак на логику приложения и других угроз.
+
+copyright: '<a href="https://wallarm.ru/terms-of-services" target="_blank">Условия предоставления услуг</a> | <a href="https://wallarm.ru/privacy-policy" target="_blank">Политика конфиденциальности</a> | <a href="https://wallarm.ru/cookie-policy" target="_blank">Использование Cookie</a> | © 2021 Онсек'
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - minify:
+      minify_html: true
+  - monorepo
+
+dev_addr: '127.0.0.1:8000'
+
+theme:
+  name: material
+  language: ru
+  custom_dir: stylesheets
+  features:
+    - tabs
+  logo: images/wallarm-logo-new.svg
+  favicon: images/favicon.png
+  icon:
+    repo: fontawesome/brands/github-alt
+  font:
+    text: Inter
+    code: Roboto Mono
+  version: "2.16"
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://wallarm.ru
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/wallarm
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/wallarm
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/4871419
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCgD4zSzAJwf3tBlOgJo7Qkw
+
+extra_css:
+  - 'extra_new.css'
+
+extra_javascript:
+  - 'extra.js'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.snippets:
+      check_paths: true
+      base_path: docs
+  - nl2br
+  - tables
+  - sane_lists
+  - attr_list
+  - prependnewline
+  - lightgallery:
+      show_description_in_lightgallery: false
+
+google_analytics: ['UA-45499521-1', 'docs.wallarm.ru']
+
+docs_dir: docs/2.16
+site_dir: site/2.16
+
+nav:
+  - Инструкции:
+    - Главная: index.md
+    - О Валарм WAF:
+      - Введение: about-wallarm-waf/overview.md
+      - Защита от атак: about-wallarm-waf/protecting-against-attacks.md
+      - Обнаружение уязвимостей: about-wallarm-waf/detecting-vulnerabilities.md
+      - Типы атак и уязвимостей: attacks-vulns-list.md
+      - Управление данными:
+        - Разделение ответственности за данные клиента: about-wallarm-waf/shared-responsibility.md
+        - Политика хранения данных: about-wallarm-waf/data-retention-policy.md
+      - План подписки на Валарм WAF: about-wallarm-waf/subscription-plans.md
+      - Рекомендации по установке и поддержке Валарм WAF: about-wallarm-waf/deployment-best-practices.md
+    - Быстрый старт:
+      - Установка и подключение WAF‑ноды на основе NGINX: quickstart-ru/qs-install-node-ru.md
+      - Настройка проксирования трафика: quickstart-ru/qs-setup-proxy-ru.md 
+      - Проверка работоспобности WAF‑ноды: quickstart-ru/qs-check-operation-ru.md
+    - Руководство администратора:
+      - Введение: admin-ru/admin-intro-ru.md
+      - Установка:
+        - Поддерживаемые платформы: admin-ru/supported-platforms.md
+        - NGINX:
+          - Обзор вариантов установки: admin-ru/installation-nginx-overview.md
+          - Установка динамического модуля для NGINX stable: waf-installation/nginx/dynamic-module.md
+          - Установка динамического модуля для NGINX из репозитория Debian/CentOS: waf-installation/nginx/dynamic-module-from-distr.md
+          - Установка динамического модуля для NGINX Plus: waf-installation/nginx-plus.md
+          - Запуск Docker‑образа на основе NGINX: admin-ru/installation-docker-ru.md
+        - Kubernetes:
+          - Установка Ingress‑контроллера NGINX с сервисами Валарм: admin-ru/installation-kubernetes-ru.md
+          - Установка sidecar‑контейнера Валарм:
+            - Как это работает: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container.md
+            - Публикация приложения с использованием Helm Charts: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-helm.md
+            - Публикация приложения с использованием Kubernetes-манифестов: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-manifest.md
+        - Облачные платформы:
+          - Обзор вариантов установки: admin-ru/installation-guides/clouds-intro.md
+          - Установка в Amazon AWS:
+            - Установка и настройка WAF‑ноды: admin-ru/installation-ami-ru.md
+            - Создание образа AMI c WAF‑нодой: admin-ru/installation-guides/amazon-cloud/create-image.md
+            - Установка WAF‑ноды с использованием Terraform:
+              - Обзор: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md
+              - Быстрый старт примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-quick-start.md
+              - Описание примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-code-desc.md
+            - Автоматическое масштабирование WAF‑ноды:
+              - Обзор: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
+              - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
+              - Настройка балансировки входящих сообщений: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
+          - Установка на Google Cloud Platform:
+            - Установка и настройка WAF‑ноды: admin-ru/installation-gcp-ru.md
+            - Создание образа виртуальной машины c WAF‑нодой: admin-ru/installation-guides/google-cloud/create-image.md
+            - Автоматическое масштабирование WAF‑нод:
+              - Обзор: admin-ru/installation-guides/google-cloud/autoscaling-overview.md
+              - Создание шаблона экземпляра WAF‑ноды: admin-ru/installation-guides/google-cloud/creating-instance-template.md
+              - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
+              - Настройка балансировки входящих сообщений: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
+          - Установка в Яндекс.Облаке: admin-ru/installation-guides/install-in-yandex-cloud.md
+        - Установка на платформу Kong: admin-ru/installation-kong-ru.md
+        - Запуск Docker‑образа на основе Envoy: admin-ru/installation-guides/envoy/envoy-docker.md
+        - Отдельная установка модуля постаналитики: admin-ru/installation-postanalytics-ru.md
+        - Проверка работоспособности WAF‑ноды: admin-ru/installation-check-operation-ru.md
+      - Настройка:
+        - Тонкая настройка (NGINX): admin-ru/configure-parameters-ru.md
+        - Тонкая настройка WAF‑ноды на основе Envoy: admin-ru/configuration-guides/envoy/fine-tuning.md
+        - Настройка режима фильтрации: admin-ru/configure-wallarm-mode.md
+        - Блокировка по IP‑адресам:
+          - Способы блокировки по IP‑адресам: admin-ru/configure-ip-blocking-ru.md
+          - Блокировка на iptables: admin-ru/configure-ip-blocking-iptables-ru.md
+          - Блокировка на NGINX: admin-ru/configure-ip-blocking-nginx-ru.md
+        - Настройка страницы блокировки и кода ошибки: admin-ru/configuration-guides/configure-block-page-and-code.md
+        - Настройка и работа с сервисом статистики: admin-ru/configure-statistics-service.md
+        - Настройка защиты от брутфорса: admin-ru/configuration-guides/protecting-against-bruteforce.md
+        - Настройка в Kubernetes:
+          - Параметры настройки: admin-ru/configure-kubernetes-ru.md
+          - Рекомендации по настройке Ingress‑контроллера:
+            - Сохранение IP‑адреса клиента при использовании балансировщика нагрузки: admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/report-public-user-ip.md
+            - Блокировка запросов по IP‑адресам: admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/block-ip-addresses.md
+            - Добавление IP‑адресов Валарм в белый список для работы сканера: admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/whitelist-wallarm-ip-addresses.md
+            - Повышение стабильности работы Ingress‑контроллера: admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/high-availability-considerations.md
+            - Мониторинг Ingress‑контроллера: admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/ingress-controller-monitoring.md
+        - Настройка ресурсов для WAF‑ноды: admin-ru/configuration-guides/allocate-resources-for-waf-node.md 
+        - Анализ зеркалированного трафика с помощью NGINX: admin-ru/mirror-traffic-ru.md
+        - Настройка WAF‑ноды в изолированных средах:
+          - Как работает WAF‑нода в изолированных средах: admin-ru/configuration-guides/waf-in-separated-environments/how-waf-in-separated-environments-works.md
+          - Рекомендации по настройке WAF‑ноды для изолированных сред: admin-ru/configuration-guides/waf-in-separated-environments/configure-waf-in-separated-environments.md
+        - Включение блокировки части сайта: admin-ru/block-part-ru.md
+        - Доступ к Валарм API через прокси‑сервер: admin-ru/configuration-guides/access-to-wallarm-api-via-proxy.md
+        - Настройки для использования балансировщика или прокси‑сервера: admin-ru/using-proxy-or-balancer-ru.md
+        - Конфигурация синхронизации WAF‑ноды с Облаком Валарм: admin-ru/configure-cloud-node-synchronization-ru.md
+        - Работа с логами WAF‑ноды: admin-ru/configure-logging.md
+        - Настройка динамического преобразования доменного имени: admin-ru/configure-dynamic-dns-resolution-nginx.md
+        - Использование Single Sign‑On (SSO):
+          - Введение: admin-ru/configuration-guides/sso/intro.md
+          - Подключение SSO с G Suite:
+            - Обзор: admin-ru/configuration-guides/sso/gsuite/overview.md
+            - Шаг 1. Генерация параметров на стороне Валарм: admin-ru/configuration-guides/sso/gsuite/setup-sp.md
+            - Шаг 2. Создание и настройка приложения в G Suite: admin-ru/configuration-guides/sso/gsuite/setup-idp.md
+            - Шаг 3. Перенос метаданных сервиса G Suite в мастер настройки Валарм: admin-ru/configuration-guides/sso/gsuite/metadata-transfer.md
+            - Шаг 4. Разрешение доступа к приложению Валарм на стороне G Suite: admin-ru/configuration-guides/sso/gsuite/allow-access-to-wl.md
+          - Подключение SSO c Okta:
+            - Обзор: admin-ru/configuration-guides/sso/okta/overview.md
+            - Шаг 1. Генерация параметров на стороне Валарм: admin-ru/configuration-guides/sso/okta/setup-sp.md
+            - Шаг 2. Создание и настройка приложения в Okta: admin-ru/configuration-guides/sso/okta/setup-idp.md
+            - Шаг 3. Перенос метаданных сервиса Okta в мастер настройки Валарм: admin-ru/configuration-guides/sso/okta/metadata-transfer.md
+            - Шаг 4. Разрешение доступа к приложению Валарм на стороне Okta: admin-ru/configuration-guides/sso/okta/allow-access-to-wl.md
+          - Настройка SSO‑аутентификации для пользователей: admin-ru/configuration-guides/sso/employ-user-auth.md
+          - Изменение настроенной SSO‑аутентификации: admin-ru/configuration-guides/sso/change-sso-provider.md   
+      - Внедрение в инфраструктуру:
+        - Настройка схемы резервирования: admin-ru/configure-backup-ru.md
+        - Использование зеркала репозитория Валарм:
+          - Зеркалирование репозитория Валарм для CentOS: admin-ru/integration-guides/repo-mirroring/centos/how-to-mirror-repo-artifactory.md
+          - Установка пакетов Валарм из репозитория JFrog Artifactory для CentOS: admin-ru/integration-guides/repo-mirroring/centos/how-to-use-mirrored-repo.md
+        - Мониторинг WAF‑ноды:
+          - Введение: admin-ru/monitoring/intro.md
+          - Получение метрик: admin-ru/monitoring/fetching-metrics.md
+          - Доступные метрики: admin-ru/monitoring/available-metrics.md
+          - Примеры выгрузки и работы с метриками:
+            - Grafana:
+              - Выгрузка метрик с помощью плагина Network `collectd` в InfluxDB: admin-ru/monitoring/network-plugin-influxdb.md
+              - Выгрузка метрик с помощью write‑плагина `collectd` в Graphite: admin-ru/monitoring/write-plugin-graphite.md
+              - Работа с метриками WAF‑ноды в Grafana: admin-ru/monitoring/working-with-grafana.md
+            - Nagios:
+              - Выгрузка метрик с помощью утилиты `collectd‑nagios` в Nagios: admin-ru/monitoring/collectd-nagios.md
+              - Работа с метриками WAF‑ноды в Nagios: admin-ru/monitoring/working-with-nagios.md
+            - Zabbix:
+              - Выгрузка метрик с помощью утилиты `collectd‑nagios` в Zabbix: admin-ru/monitoring/collectd-zabbix.md
+              - Работа с метриками WAF‑ноды в Zabbix: admin-ru/monitoring/working-with-zabbix.md
+      - Дополнительные действия:
+        - Настройка SELinux: admin-ru/configure-selinux.md
+        - Перечень проверочных операций: admin-ru/uat-checklist-ru.md
+        - Определение количества запросов к приложению за месяц: admin-ru/operation/learn-incoming-request-number.md
+      - Обеспечение работы сканера:
+        - Отключение блокировки IP‑адресов сканера Валарм: admin-ru/scanner-ips-whitelisting.md
+        - Адреса сканера:
+          - Адреса сканера для EU‑облака: admin-ru/scanner-address-ru.md
+          - Адреса сканера для RU‑облака: admin-ru/scanner-address-ru-ru.md
+        - Обращение в поддержку Валарм для остановки сканера: admin-ru/scanner-complaint-ru.md
+    - Руководство пользователя:
+      - Введение: user-guides/user-intro.md
+      - Работа с дэшбордами:
+        - Обзор: user-guides/dashboard/intro.md
+        - Дэшборд WAF: user-guides/dashboard/waf.md
+        - Дэшборд "Сканер": user-guides/dashboard/scanner.md
+      - Работа с событиями:
+        - Просмотр событий: user-guides/events/check-attack.md
+        - Анализ атаки: user-guides/events/analyze-attack.md
+        - "Работа с ложным срабатыванием: атаки": user-guides/events/false-attack.md
+        - Перепроверка атак: user-guides/events/verify-attack.md
+      - Работа с уязвимостями:
+        - Просмотр уязвимостей: user-guides/vulnerabilities/check-vuln.md
+        - Анализ уязвимости: user-guides/vulnerabilities/analyze-vuln.md
+        - Закрытие и открытие уязвимости: user-guides/vulnerabilities/close-open-vuln.md
+        - Перепроверка уязвимости: user-guides/vulnerabilities/recheck-vuln.md
+        - "Работа с ложным срабатыванием: уязвимости": user-guides/vulnerabilities/false-vuln.md
+      - Работа со сканером:
+        - Обзор сканера: user-guides/scanner/intro.md
+        - Работа с сетевым периметром: user-guides/scanner/check-scope.md
+        - Зарезервированные домены: user-guides/scanner/reserved-domains.md
+        - Настройка сканера:
+          - Обзор: user-guides/scanner/configure-scanner.md
+          - Настройка модулей сканера уязвимостей: user-guides/scanner/configure-scanner-modules.md
+      - Использование поиска и фильтров:
+        - Использование поиска и фильтров: user-guides/search-and-filters/use-search.md
+        - Создание отчета: user-guides/search-and-filters/custom-report.md
+      - Работа с WAF‑нодами:
+        - Обзор WAF‑нод: user-guides/nodes/nodes.md
+        - Локальные WAF‑ноды: user-guides/nodes/regular-node.md
+        - Облачные WAF‑ноды: user-guides/nodes/cloud-node.md
+      - Работа с правилами:
+        - Обзор правил профиля приложений: user-guides/rules/intro.md
+        - Просмотр правил профиля приложений: user-guides/rules/view.md
+        - Добавление правил в профиле приложений: user-guides/rules/add-rule.md
+        - Сборка и обновление правил фильтрации: user-guides/rules/compiling.md
+        - Анализ и парсинг запросов: user-guides/rules/request-processing.md
+        - Режим фильтрации: user-guides/rules/wallarm-mode-rule.md
+        - Маскировка данных: user-guides/rules/sensitive-data-rule.md
+        - Определение счетчиков атак: user-guides/rules/define-counters.md
+        - Изменение запроса перед перепроверкой атаки: user-guides/rules/change-request-for-active-verification.md 
+        - Виртуальные патчи: user-guides/rules/vpatch-rule.md
+        - Пользовательские правила детекта: user-guides/rules/regex-rule.md
+      - Триггеры:
+        - Работа с триггерами: user-guides/triggers/triggers.md
+        - Примеры триггеров: user-guides/triggers/trigger-examples.md
+      - Черный список: user-guides/blacklist.md
+      - Настройки:
+        - Профиль: user-guides/settings/account.md
+        - Общие настройки: user-guides/settings/general.md
+        - Подписки: user-guides/settings/subscriptions.md
+        - Приложения: user-guides/settings/applications.md
+        - Пользователи: user-guides/settings/users.md
+        - Журнал действий: user-guides/settings/audit-log.md
+        - Интеграции:
+          - Обзор интеграций: user-guides/settings/integrations/integrations-intro.md
+          - Отчеты по email: user-guides/settings/integrations/email.md
+          - Slack: user-guides/settings/integrations/slack.md
+          - Telegram: user-guides/settings/integrations/telegram.md
+          - Opsgenie: user-guides/settings/integrations/opsgenie.md
+          - InsightConnect: user-guides/settings/integrations/insightconnect.md
+          - PagerDuty: user-guides/settings/integrations/pagerduty.md
+          - Splunk: user-guides/settings/integrations/splunk.md
+          - Sumo Logic: user-guides/settings/integrations/sumologic.md
+          - Webhook: 
+            - Обзор webhook‑интеграции: user-guides/settings/integrations/webhook.md
+            - Примеры webhook‑интеграций:
+              - IBM QRadar через Fluentd: user-guides/settings/integrations/webhook-examples/fluentd-qradar.md
+              - IBM QRadar через Logstash: user-guides/settings/integrations/webhook-examples/logstash-qradar.md
+              - Splunk Enterprise через Fluentd: user-guides/settings/integrations/webhook-examples/fluentd-splunk.md
+              - Splunk Enterprise через Logstash: user-guides/settings/integrations/webhook-examples/logstash-splunk.md
+              - Micro Focus ArcSight Logger через Fluentd: user-guides/settings/integrations/webhook-examples/fluentd-arcsight-logger.md
+              - Micro Focus ArcSight Logger через Logstash: user-guides/settings/integrations/webhook-examples/logstash-arcsight-logger.md
+      - Использование SSO‑аутентификации для входа на портал Валарм: user-guides/use-sso.md
+    - Работа с партнерской WAF‑нодой:
+      - Обзор партнерской схемы работы: partner-waf-node/overview.md
+      - Создание и настройка партнерского аккаунта: partner-waf-node/creating-partner-account.md
+      - Создание и привязка клиентов: partner-waf-node/connecting-clients.md
+      - Установка и настройка партнерской WAF‑ноды: partner-waf-node/installing-partner-waf-node.md
+    - Обновление и миграция:
+      - Что нового в WAF‑ноде 2.16: updating-migrating/what-is-new.md
+      - Политика версионирования WAF‑ноды: updating-migrating/versioning-policy.md
+      - Рекомендации по обновлению WAF‑ноды: updating-migrating/general-recommendations.md
+      - Инструкции по обновлению WAF‑ноды:
+        - Обновление Linux‑пакетов WAF: updating-migrating/nginx-modules.md
+        - Обновление отдельно установленного модуля постаналитики: updating-migrating/separate-postanalytics.md
+        - Обновление запущенного Docker‑образа на основе NGINX: updating-migrating/docker-container.md
+        - Обновление Ingress‑контроллера NGINX с сервисами Валарм WAF: updating-migrating/ingress-controller.md
+        - Обновление облачного образа WAF‑ноды: updating-migrating/cloud-image.md
+    - Приложения:
+      - Глоссарий: glossary-ru.md
+  - Валарм API: '!include ./api/mkdocs.yml'
+  - FAQ: '!include ./faq/mkdocs.yml'
+  - Демо‑видео: '!include ./demo-videos/mkdocs.yml'

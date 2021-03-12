@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/monitoring/network-plugin-influxdb.md"

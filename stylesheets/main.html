@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  Защитите свои веб-приложения и API в любой инфраструктуре. <a href="https://www.wallarm.com/request-demo?utm_source=wallarm_docs_ru&utm_medium=top_line&utm_campaign=wallarm_docs_experiment_1" style="color:white; font-weight: bold;">Посмотреть продукт →</a>
+{% endblock %}
+
+<!-- Custom front matter -->
+{% block extrahead %}
+
+  <!-- Determine title -->
+  {% set title = config.site_name %}
+  {% if page and page.title and not page.is_homepage %}
+    {% set title = config.site_name ~ " - " ~ page.title | striptags %}
+  {% endif %}
+
+  <!-- The image needs to have an absolute URL -->
+  {% set image = config.site_url ~ 'assets/images/banner.png' %}
+
+  <!-- Open graph meta tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ config.site_description }}" />
+  <meta property="og:url" content="{{ page.canonical_url }}" />
+  <meta property="og:image" content="{{ image }}" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ base_url }}/css/lightgallery.min.css">
+{% endblock styles %}
+
+{% block libs %}
+    {{ super() }}
+    <script src="{{ base_url }}/js/lightgallery.min.js"></script>
+{% endblock libs %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+{% endblock scripts %}
+
+
+{% block fonts %} 
+  
+       <!-- Load fonts from Google --> 
+       {% if font != false %} 
+         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin /> 
+         <link rel="stylesheet" type="text/css" 
+             href="https://fonts.googleapis.com/css?family={{ 
+               font.text | replace(' ', '+') + ':300,400,400i,700%7C' + 
+               font.code | replace(' ', '+') 
+             }}&display=fallback" /> 
+         <style> 
+           body, input { 
+             font-family: "{{ font.text }}", "Helvetica Neue", 
+               Helvetica, Arial, sans-serif; 
+           } 
+           pre, code, kbd { 
+             font-family: "{{ font.code }}", "Courier New", 
+               Courier, monospace; 
+           } 
+         </style> 
+       {% endif %} 
+     {% endblock %}

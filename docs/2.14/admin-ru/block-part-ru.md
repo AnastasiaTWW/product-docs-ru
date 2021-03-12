@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/block-part-ru.md"

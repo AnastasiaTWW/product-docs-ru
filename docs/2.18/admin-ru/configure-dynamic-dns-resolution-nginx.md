@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configure-dynamic-dns-resolution-nginx.md"

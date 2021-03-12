@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/installation-check-operation-ru.md"

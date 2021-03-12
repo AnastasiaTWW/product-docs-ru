@@ -1,0 +1,2 @@
+!!! warning "Поддержка аннотации nginx.ingress.kubernetes.io/wallarm-acl-block-page"
+    Аннотация `nginx.ingress.kubernetes.io/wallarm-acl-block-page` для Ingress‑контроллера Валарм поддерживается с [WAF‑ноды версии 2.18](/admin-ru/configuration-guides/configure-block-page-and-code/).

@@ -1,0 +1,8 @@
+image:
+  pullPolicy: Always
+  pullSecrets:
+  - name: wallarm-dkr-infra-key
+service:
+  name: wallarm-docs-ru
+  type: ClusterIP
+  externalPort: 80

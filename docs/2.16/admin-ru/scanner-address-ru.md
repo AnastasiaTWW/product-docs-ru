@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/scanner-address-ru.md"

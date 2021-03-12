@@ -1,0 +1,8 @@
+site_name: demo-videos
+
+nav:
+  - Обзор Валарм WAF и способов установки: waf-overview.md
+  - Анализ обнаруженных событий: waf-events-inspection.md
+  - Обзор Сканера Валарм: scanner-overview.md
+  - Уведомления и реакции на события в системе: notifications.md
+  - Обзор Валарм FAST и способов установки: fast-overview.md

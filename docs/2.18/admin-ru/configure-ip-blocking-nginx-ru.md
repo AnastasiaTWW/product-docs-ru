@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configure-ip-blocking-nginx-ru.md"

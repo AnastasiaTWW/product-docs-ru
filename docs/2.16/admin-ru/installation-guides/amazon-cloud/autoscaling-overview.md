@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md"

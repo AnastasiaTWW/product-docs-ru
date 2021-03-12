@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/using-proxy-or-balancer-ru.md"

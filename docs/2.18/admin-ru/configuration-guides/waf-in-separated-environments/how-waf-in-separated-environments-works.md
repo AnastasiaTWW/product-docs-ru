@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/waf-in-separated-environments/how-waf-in-separated-environments-works.md"

@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/configuration-guides/sso/gsuite/allow-access-to-wl.md"

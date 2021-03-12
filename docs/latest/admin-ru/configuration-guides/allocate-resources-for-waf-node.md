@@ -1,0 +1,129 @@
+# Настройка ресурсов для WAF‑ноды
+
+Количество ресурсов, выделенных для WAF‑ноды, определяет качество и скорость обработки запросов. Данная инструкция содержит рекомендации по настройке ресурсов для WAF‑ноды.
+
+Основными потребителями ресурсов являются следующие компоненты WAF‑ноды:
+
+* [Tarantool](#tarantool) или **модуль постаналитики**. Выполняет статистический анализ обработанных запросов локально и является основным потребителем ресурсов.
+* [NGINX](#nginx). Основной компонент WAF‑ноды и обратного проксирования.
+
+## Tarantool
+
+--8<-- "../include/allocate-memory-for-waf-node/tarantool-memory.md"
+
+### Настройка ресурсов в Ingress‑контроллере Kubernetes
+
+--8<-- "../include/allocate-memory-for-waf-node/tarantool-memory-ingress-controller.md"
+
+### Настройка ресурсов на других платформах
+
+Настройка памяти для Tarantool выполняется в файле `/etc/default/wallarm-tarantool` > атрибут `SLAB_ALLOC_ARENA`. Чтобы указать количество памяти:
+
+<ol start="1"><li>Откройте конфигурационный файл Tarantool:</li></ol>
+
+=== "Debian 9.x (stretch)"
+    ```bash
+    sudo vim /etc/default/wallarm-tarantool
+    ```
+=== "Debian 10.x (buster)"
+    ```bash
+    sudo vim /etc/default/wallarm-tarantool
+    ```
+=== "Ubuntu 16.04 LTS (xenial)"
+    ```bash
+    sudo vim /etc/default/wallarm-tarantool
+    ```
+=== "Ubuntu 18.04 LTS (bionic)"
+    ```bash
+    sudo vim /etc/default/wallarm-tarantool
+    ```
+=== "CentOS 7.x"
+    ```bash
+    sudo vim /etc/sysconfig/wallarm-tarantool
+    ```
+=== "Amazon Linux 2"
+    ```bash
+    sudo vim /etc/sysconfig/wallarm-tarantool
+    ```
+=== "CentOS 8.x"
+    ```bash
+    sudo vim /etc/sysconfig/wallarm-tarantool
+    ```
+
+<ol start="2"><li>Укажите размер памяти в атрибуте <code>SLAB_ALLOC_ARENA</code>. Значение может быть целым или дробным (разделитель целой и дробной части — точка). Например:</li></ol>
+
+```
+SLAB_ALLOC_ARENA=10.4
+```
+
+<ol start="3"><li>Перезапустите Tarantool:</li></ol>
+
+=== "Debian 9.x (stretch)"
+    ```bash
+    sudo systemctl restart wallarm-tarantool
+    ```
+=== "Debian 10.x (buster)"
+    ```bash
+    sudo systemctl restart wallarm-tarantool
+    ```
+=== "Ubuntu 16.04 LTS (xenial)"
+    ```bash
+    sudo service wallarm-tarantool restart
+    ```
+=== "Ubuntu 18.04 LTS (bionic)"
+    ```bash
+    sudo service wallarm-tarantool restart
+    ```
+=== "CentOS 7.x"
+    ```bash
+    sudo systemctl restart wallarm-tarantool
+    ```
+=== "Amazon Linux 2"
+    ```bash
+    sudo systemctl restart wallarm-tarantool
+    ```
+=== "CentOS 8.x"
+    ```bash
+    sudo systemctl restart wallarm-tarantool
+    ```
+
+Чтобы получить количество времени, на протяжении которого Tarantool может хранить данные о трафике с текущим уровнем нагрузки на WAF‑ноду, вы можете использовать метрику [`wallarm-tarantool/gauge-timeframe_size`](../monitoring/available-metrics.md#время-хранения-запросов-в-модуле-постаналитики-в-секундах).
+
+## NGINX
+
+Количество ресурсов, которое использует NGINX, зависит от множества факторов. Для средней оценки используется следующая формула:
+
+```
+Количество одновременных запросов * Средний размер запроса * 3
+```
+
+Например:
+
+* WAF‑нода обрабатывает на пике 10000 запросов одновременно;
+* средний размер запроса — 5 Кбит.
+
+Количество ресурсов, потребляемых NGINX, будет равно:
+
+```
+10000 * 5 Кбит * 3 = 150000 Кбит (или ~150 Мбит)
+```
+
+**Чтобы выделить ресурсы:**
+
+* для pod'а Ingress‑контроллера NGINX (`ingress-controller`) используйте следующий блок в файле `values.yaml`:
+    ```
+    controller:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1640Mi
+        requests:
+          cpu: 1000m
+          memory: 1640Mi
+    ```
+* для других плаформ используйте конфигурационный файл NGINX.
+
+!!! info "Рекомендации по использованию ресурсов CPU"
+    При запуске WAF‑ноды в боевой среде рекомендуется выделить как минимум 1 ядро ЦП для NGINX и 1 ядро ЦП для Tarantool.
+    
+    Фактическое количество ресурсов для NGINX зависит от многих факторов, например: количество запросов в секунду, средний размер запроса и ответа, количество правил ЛОМ, типы кодировки данных и других. В среднем, 1 ядро ЦП обрабатыает около 500 запросов в секунду. При первоначальной настройке ресурсов рекомендуется выделить увеличенное количество ресурсов для WAF‑ноды. Через некоторое время вы сможете проверить реальное количество используемых ресурсов и адаптировать настройку под реальные показатели, увеличенные вдвое для обеспечения стабильности в случаях типа скачка трафика.

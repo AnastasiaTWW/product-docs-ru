@@ -1,0 +1,89 @@
+site_name: Документация Валарм
+site_url: https://docs.wallarm.ru/
+site_description: Валарм WAF обладает неограниченным горизонтальным масштабированием и защищает веб-приложения и API от угроз OWASP Top 10, ботов, атак на логику приложения и других угроз.
+
+copyright: '<a href="https://wallarm.ru/terms-of-services" target="_blank">Условия предоставления услуг</a> | <a href="https://wallarm.ru/privacy-policy" target="_blank">Политика конфиденциальности</a> | <a href="https://wallarm.ru/cookie-policy" target="_blank">Использование Cookie</a> | © 2021 Онсек'
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - minify:
+      minify_html: true
+  - monorepo
+
+dev_addr: '127.0.0.1:8000'
+
+theme:
+  name: material
+  language: ru
+  custom_dir: stylesheets
+  features:
+    - tabs
+  logo: images/wallarm-logo-new.svg
+  favicon: images/favicon.png
+  icon:
+    repo: fontawesome/brands/github-alt
+  font:
+    text: Inter
+    code: Roboto Mono
+  version: "2.12"
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://wallarm.ru
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/wallarm
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/wallarm
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/4871419
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCgD4zSzAJwf3tBlOgJo7Qkw
+
+extra_css:
+  - 'extra_new.css'
+
+extra_javascript:
+  - 'extra.js'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.snippets:
+      check_paths: true
+      base_path: docs
+  - nl2br
+  - tables
+  - sane_lists
+  - attr_list
+  - prependnewline
+  - lightgallery:
+      show_description_in_lightgallery: false
+
+google_analytics: ['UA-45499521-1', 'docs.wallarm.ru']
+
+docs_dir: docs/deprecated
+site_dir: site/2.12
+
+nav:
+  - Инструкции:
+    - Главная: index.md
+  - Валарм API: '!include ./api/mkdocs.yml'
+  - FAQ: '!include ./faq/mkdocs.yml'
+  - Демо‑видео: '!include ./demo-videos/mkdocs.yml'

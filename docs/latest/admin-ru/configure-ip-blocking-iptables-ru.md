@@ -34,6 +34,10 @@
          ```bash
          sudo apt install wallarm-extra-scripts
          ```
+    === "Ubuntu 20.04 LTS (focal)"
+         ```bash
+         sudo apt install wallarm-extra-scripts
+         ```
     === "CentOS 7.x"
          ```bash
          sudo yum install wallarm-extra-scripts

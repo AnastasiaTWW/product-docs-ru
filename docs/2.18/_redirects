@@ -43,7 +43,7 @@
 ~*^/2.12/(attacks-vulns-list|glossary-ru)/ /2.12
 ~*^/2.10/(?<u>.+)$ /2.12
 /2.10/ /2.12
-/2.10 2.12
+/2.10 /2.12
 
 /quickstart-ru/how-wallarm-works/qs-intro-ru /about-wallarm-waf/overview/
 /quickstart-ru/how-wallarm-works/shared-responsibility /about-wallarm-waf/shared-responsibility/
@@ -129,4 +129,14 @@
 /2.14/admin-ru/sensitive-data-ru/ /2.14/user-guides/rules/sensitive-data-rule/
 /2.14/admin-ru/sensitive-data-ru /2.14/user-guides/rules/sensitive-data-rule/
 
-/2.12/* /2.12
+/2.12/admin-ru/* /2.12	
+/2.12/quickstart-ru/* /2.12	
+/2.12/updating-migrating/* /2.12	
+/2.12/user-guides/* /2.12	
+/2.12/waf-installation/* /2.12	
+/2.12/about-wallarm-waf/* /2.12	
+/2.12/partner-waf-node/* /2.12	
+/2.12/attacks-vulns-list /2.12	
+/2.12/attacks-vulns-list/ /2.12	
+/2.12/glossary-ru /2.12	
+/2.12/glossary-ru/ /2.12

@@ -73,6 +73,10 @@
             ```bash
             /var/cache/nginx/wallarm_acl_default
             ```
+        === "Ubuntu 20.04 LTS (focal)"
+            ```bash
+            /var/cache/nginx/wallarm_acl_default
+            ```
         === "CentOS 7.x"
             ```bash
             /var/lib/nginx/wallarm_acl_default
@@ -104,6 +108,10 @@
             ```bash
             /var/lib/nginx/wallarm_acl_default
             ```
+        === "Ubuntu 20.04 LTS (focal)"
+            ```bash
+            /var/lib/nginx/wallarm_acl_default
+            ```
         === "CentOS 7.x"
             ```bash
             /var/lib/nginx/wallarm_acl_default
@@ -132,6 +140,10 @@
             /var/lib/nginx/wallarm_acl_default
             ```
         === "Ubuntu 18.04 LTS (bionic)"
+            ```bash
+            /var/lib/nginx/wallarm_acl_default
+            ```
+        === "Ubuntu 20.04 LTS (focal)"
             ```bash
             /var/lib/nginx/wallarm_acl_default
             ```

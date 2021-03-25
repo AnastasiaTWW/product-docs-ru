@@ -14,6 +14,8 @@
 * [Облачные WAF‑ноды](../nodes/cloud-node.md)
 * [Триггеры](../triggers/triggers.md)
 * [Интеграции](integrations/integrations-intro.md)
+* [Заблокированный IP-адрес](../blacklist.md)
+* [Семплирование хитов](../events/analyze-attack.md#семплирование-хитов)
 
 Также, лог содержит информацию о следующих действиях и объектах:
 

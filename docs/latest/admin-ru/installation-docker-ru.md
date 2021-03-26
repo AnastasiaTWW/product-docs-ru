@@ -56,11 +56,11 @@ WAF‑нода на основе NGINX может быть установлен�
 
 === "EU‑облако"
     ```bash
-    docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e NGINX_BACKEND='example.com' -e TARANTOOL_MEMORY_GB=16 -p 80:80 wallarm/node:2.18.0-3
+    docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e NGINX_BACKEND='example.com' -e TARANTOOL_MEMORY_GB=16 -p 80:80 wallarm/node:2.18.1-1
     ```
 === "RU‑облако"
     ```bash
-    docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e NGINX_BACKEND='example.com' -e WALLARM_API_HOST='api.wallarm.ru' -e TARANTOOL_MEMORY_GB=16 -p 80:80 wallarm/node:2.18.0-3
+    docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e NGINX_BACKEND='example.com' -e WALLARM_API_HOST='api.wallarm.ru' -e TARANTOOL_MEMORY_GB=16 -p 80:80 wallarm/node:2.18.1-1
     ```
 
 Команда выполнит следующие действия:
@@ -116,11 +116,11 @@ WAF‑нода на основе NGINX может быть установлен�
 
     === "EU‑облако"
         ```bash
-        docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -v /configs/default:/etc/nginx/sites-enabled/default -p 80:80 wallarm/node:2.18.0-3
+        docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -v /configs/default:/etc/nginx/sites-enabled/default -p 80:80 wallarm/node:2.18.1-1
         ```
     === "RU‑облако"
         ```bash
-        docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e WALLARM_API_HOST='api.wallarm.ru' -v /configs/default:/etc/nginx/sites-enabled/default -p 80:80 wallarm/node:2.18.0-3
+        docker run -d -e DEPLOY_USER='deploy@example.com' -e DEPLOY_PASSWORD='very_secret' -e WALLARM_API_HOST='api.wallarm.ru' -v /configs/default:/etc/nginx/sites-enabled/default -p 80:80 wallarm/node:2.18.1-1
         ```
 
 Команда выполнит следующие действия:

@@ -23,11 +23,11 @@
 
 === "Образ на основе NGINX"
     ``` bash
-    docker pull wallarm/node:2.18.0-3
+    docker pull wallarm/node:2.18.1-1
     ```
 === "Образ на основе Envoy"
     ``` bash
-    docker pull wallarm/envoy:2.18.0-1
+    docker pull wallarm/envoy:2.18.1-1
     ```
 
 ## Шаг 2: Остановите текущий контейнер

@@ -1,0 +1,1 @@
+--8<-- "latest/admin-ru/attack-rechecker-best-practices.md"

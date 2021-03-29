@@ -211,6 +211,7 @@ nav:
         - Перечень проверочных операций: admin-ru/uat-checklist-ru.md
         - Определение количества запросов к приложению за месяц: admin-ru/operation/learn-incoming-request-number.md
       - Обеспечение работы сканера:
+        - Рекомендации по управлению модулем активной проверки атак: admin-ru/attack-rechecker-best-practices.md
         - Отключение блокировки IP‑адресов сканера Валарм: admin-ru/scanner-ips-whitelisting.md
         - Адреса сканера:
           - Адреса сканера для EU‑облака: admin-ru/scanner-address-ru.md

@@ -461,6 +461,10 @@ top: 1.125em;
   font-size: 12px;
 }
 
+.wrapped-code code {
+  white-space: pre-wrap;
+}
+
 /* Search bar */
 
 .md-search__form {

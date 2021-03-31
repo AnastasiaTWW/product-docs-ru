@@ -7,11 +7,11 @@
 Значение `TIMESTAMP` необходимо заменить на дату 24 часа назад в формате [Unix Timestamp](https://www.unixtimestamp.com/).
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/attack" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID], \"time\": [[TIMESTAMP, null]] }, \"offset\": 0, \"limit\": 50, \"order_by\": \"last_time\", \"order_desc\": true}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/attack" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID], \"time\": [[TIMESTAMP, null]] }, \"offset\": 0, \"limit\": 50, \"order_by\": \"last_time\", \"order_desc\": true}"
     ```
 
@@ -22,11 +22,11 @@
 Значение `TIMESTAMP` необходимо заменить на дату 24 часа назад в формате [Unix Timestamp](https://www.unixtimestamp.com/).
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/attack" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID], \"\!vulnid\": null, \"time\": [[TIMESTAMP, null]] }, \"offset\": 0, \"limit\": 50, \"order_by\": \"last_time\", \"order_desc\": true}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/attack" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID], \"\!vulnid\": null, \"time\": [[TIMESTAMP, null]] }, \"offset\": 0, \"limit\": 50, \"order_by\": \"last_time\", \"order_desc\": true}"
     ```
 
@@ -35,55 +35,55 @@
 Значение `TIMESTAMP` необходимо заменить на дату 24 часа назад в формате [Unix Timestamp](https://www.unixtimestamp.com/).
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/vuln" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"limit\":50, \"offset\":0, \"filter\":{\"clientid\":[YOUR_CLIENT_ID], \"testrun_id\":null, \"validated\":true, \"time\":[[TIMESTAMP, null]]}}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/vuln" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"limit\":50, \"offset\":0, \"filter\":{\"clientid\":[YOUR_CLIENT_ID], \"testrun_id\":null, \"validated\":true, \"time\":[[TIMESTAMP, null]]}}"
     ```
 
 ## Получение настроенных правил обработки запросов
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\": [YOUR_CLIENT_ID]},\"order_by\": \"updated_at\",\"order_desc\": true,\"limit\": 1000,\"offset\": 0}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\": [YOUR_CLIENT_ID]},\"order_by\": \"updated_at\",\"order_desc\": true,\"limit\": 1000,\"offset\": 0}"
     ```
 
 ## Получение настроенных условий блокировки запросов
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/action" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID] }, \"offset\": 0, \"limit\": 1000}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/action" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"filter\": { \"clientid\": [YOUR_CLIENT_ID] }, \"offset\": 0, \"limit\": 1000}"
     ```
 
 ## Получение правил по ID условия
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\": [YOUR_CLIENT_ID],\"actionid\": YOUR_CONDITION_ID},\"limit\": 1000,\"offset\": 0}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\": [YOUR_CLIENT_ID],\"actionid\": YOUR_CONDITION_ID},\"limit\": 1000,\"offset\": 0}"
     ```
 
 ## Создание виртуального патча для блокировки всех запросов к `/my/api/*`
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"clientid\": YOUR_CLIENT_ID, \"type\": \"vpatch\", \"action\": [ {\"type\":\"equal\",\"value\":\"my\",\"point\":[\"path\",0]}, {\"type\":\"equal\",\"value\":\"api\",\"point\":[\"path\",1]}, {\"type\":\"equal\",\"value\":\"endpoint\",\"point\":[\"header\",\"2\"]}], \"validated\": false, \"point\": [ [ \"header\", \"HOST\" ] ], \"attack_type\": \"any\"}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"clientid\": YOUR_CLIENT_ID, \"type\": \"vpatch\", \"action\": [ {\"type\":\"equal\",\"value\":\"my\",\"point\":[\"path\",0]}, {\"type\":\"equal\",\"value\":\"api\",\"point\":[\"path\",1]}, {\"type\":\"equal\",\"value\":\"endpoint\",\"point\":[\"header\",\"2\"]}], \"validated\": false, \"point\": [ [ \"header\", \"HOST\" ] ], \"attack_type\": \"any\"}"
     ```
 
@@ -92,11 +92,11 @@
 ID приложения указывается в параметре `action.value`.
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"vpatch\",\"action\":[{\"point\":[\"instance\"],\"type\":\"equal\",\"value\":\"-1\",\"weight\":102},{\"point\":[\"path\",0],\"type\":\"equal\",\"value\":\"my\",\"weight\":72},{\"point\":[\"path\",1],\"type\":\"equal\",\"value\":\"api\",\"weight\":72},{\"point\":[\"header\",\"2\"],\"type\":\"equal\",\"value\":\"endpoint\",\"weight\":42}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"point\":[[\"header\",\"HOST\"]],\"attack_type\":\"any\"}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"vpatch\",\"action\":[{\"point\":[\"instance\"],\"type\":\"equal\",\"value\":\"-1\",\"weight\":102},{\"point\":[\"path\",0],\"type\":\"equal\",\"value\":\"my\",\"weight\":72},{\"point\":[\"path\",1],\"type\":\"equal\",\"value\":\"api\",\"weight\":72},{\"point\":[\"header\",\"2\"],\"type\":\"equal\",\"value\":\"endpoint\",\"weight\":42}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"point\":[[\"header\",\"HOST\"]],\"attack_type\":\"any\"}"
     ```
 
@@ -105,21 +105,21 @@ ID приложения указывается в параметре `action.val
 Правило блокирует все запросы к `MY.DOMAIN.COM`, кроме запросов с IP-адресом `44.33.22.11` в значении заголовка `X-FORWARDED-FOR`.
 
 === "EU‑облако"
-    ```bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"regex\",\"action\":[{\"point\":[\"header\",\"HOST\"],\"type\":\"equal\",\"value\":\"MY.DOMAIN.NAME\"}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"comment\":\"comment\",\"point\":[[\"header\",\"X-FORWARDED-FOR\"]],\"attack_type\":\"scanner\",\"regex\":\"^\(~\(44[.]33[.]22[.]11\)\)$\"}"
     ```
 === "RU‑облако"
-    ```bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"regex\",\"action\":[{\"point\":[\"header\",\"HOST\"],\"type\":\"equal\",\"value\":\"MY.DOMAIN.NAME\"}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"comment\":\"comment\",\"point\":[[\"header\",\"X-FORWARDED-FOR\"]],\"attack_type\":\"scanner\",\"regex\":\"^\(~\(44[.]33[.]22[.]11\)\)$\"}"
     ```
 
 ## Удаление правила по ID
 
 === "EU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.com/v1/objects/hint/delete" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\":[YOUR_CLIENT_ID],\"id\": YOUR_RULE_ID}}"
     ```
 === "RU‑облако"
-    ``` bash
+    ```{.bash .wrapped-code}
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/delete" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"filter\":{\"clientid\":[YOUR_CLIENT_ID],\"id\": YOUR_RULE_ID}}"
     ```

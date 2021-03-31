@@ -100,6 +100,19 @@ ID приложения указывается в параметре `action.val
     curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"vpatch\",\"action\":[{\"point\":[\"instance\"],\"type\":\"equal\",\"value\":\"-1\",\"weight\":102},{\"point\":[\"path\",0],\"type\":\"equal\",\"value\":\"my\",\"weight\":72},{\"point\":[\"path\",1],\"type\":\"equal\",\"value\":\"api\",\"weight\":72},{\"point\":[\"header\",\"2\"],\"type\":\"equal\",\"value\":\"endpoint\",\"weight\":42}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"point\":[[\"header\",\"HOST\"]],\"attack_type\":\"any\"}"
     ```
 
+## Создание правила для блокировки всех запросов с определенными значениями заголовков HOST и X-FORWARDED-FOR
+
+Правило блокирует все запросы к `MY.DOMAIN.COM`, кроме запросов с IP-адресом `44.33.22.11` в значении заголовка `X-FORWARDED-FOR`.
+
+=== "EU‑облако"
+    ```bash
+    curl -v -X POST "https://api.wallarm.com/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"regex\",\"action\":[{\"point\":[\"header\",\"HOST\"],\"type\":\"equal\",\"value\":\"MY.DOMAIN.NAME\"}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"comment\":\"comment\",\"point\":[[\"header\",\"X-FORWARDED-FOR\"]],\"attack_type\":\"scanner\",\"regex\":\"^\(~\(44[.]33[.]22[.]11\)\)$\"}"
+    ```
+=== "RU‑облако"
+    ```bash
+    curl -v -X POST "https://api.wallarm.ru/v1/objects/hint/create" -H "X-WallarmAPI-UUID: YOUR_UUID" -H "X-WallarmAPI-Secret: YOUR_SECRET_KEY" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"type\":\"regex\",\"action\":[{\"point\":[\"header\",\"HOST\"],\"type\":\"equal\",\"value\":\"MY.DOMAIN.NAME\"}],\"clientid\":YOUR_CLIENT_ID,\"validated\":false,\"comment\":\"comment\",\"point\":[[\"header\",\"X-FORWARDED-FOR\"]],\"attack_type\":\"scanner\",\"regex\":\"^\(~\(44[.]33[.]22[.]11\)\)$\"}"
+    ```
+
 ## Удаление правила по ID
 
 === "EU‑облако"

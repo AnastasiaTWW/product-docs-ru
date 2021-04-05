@@ -33,7 +33,7 @@
 3. Клонируйте репозиторий Helm‑чарта Валарм:
 
     ``` bash
-    git clone https://github.com/wallarm/ingress-chart --branch 2.18.1-1 --single-branch
+    git clone https://github.com/wallarm/ingress-chart --branch 2.18.1-3 --single-branch
     ```
 4. Установите Ingress-контроллер Валарм:
 

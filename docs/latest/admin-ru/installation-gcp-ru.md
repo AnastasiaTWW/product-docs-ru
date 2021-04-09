@@ -57,10 +57,10 @@
     ```bash
     wallarm-node-195710/wallarm-node-<IMAGE_VERSION>-build
     ```
-* Чтобы запустить инстанс с WAF‑нодой версии 2.16, используйте название образа:
+* Чтобы запустить инстанс с WAF‑нодой версии 2.18, используйте название образа:
 
     ```bash
-    wallarm-node-195710/wallarm-node-2-16-0-7-19878-build
+    wallarm-node-195710/wallarm-node-2-18-0-3-19887-build
     ```
 
 Чтобы получить название образа, вы также можете использовать следующий алгоритм:
@@ -69,13 +69,13 @@
 2. Выполнить команду [`gcloud compute images list`](https://cloud.google.com/sdk/gcloud/reference/compute/images/list) со следующими параметрами:
     
     ```bash
-    gcloud compute images list --project wallarm-node-195710 --filter="name~'wallarm-node-2-16-*'" --no-standard-images
+    gcloud compute images list --project wallarm-node-195710 --filter="name~'wallarm-node-2-18-*'" --no-standard-images
     ```
 
-3. Скопировать версию из названия последнего доступного образа и вставить скопированное значение в приведенный формат названия образа. Например, для образа WAF‑ноды версии 2.16:
+3. Скопировать версию из названия последнего доступного образа и вставить скопированное значение в приведенный формат названия образа. Например, для образа WAF‑ноды версии 2.18:
 
     ```bash
-    wallarm-node-195710/wallarm-node-2-16-0-7-19878-build
+    wallarm-node-195710/wallarm-node-2-18-0-3-19887-build
     ```
 
 ## 3. Настройка инстанса с WAF‑нодой Валарм

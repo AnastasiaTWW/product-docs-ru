@@ -27,7 +27,7 @@
     ```
 === "Образ на основе Envoy"
     ``` bash
-    docker pull wallarm/envoy:2.18.1-1
+    docker pull wallarm/envoy:2.18.1-3
     ```
 
 ## Шаг 2: Остановите текущий контейнер

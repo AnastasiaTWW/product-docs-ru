@@ -10,7 +10,7 @@
 1. Склонируйте новую версию Helm‑чарта из репозитория Валарм:
 
     ```bash
-    git clone https://github.com/wallarm/ingress-chart --branch 2.18.1-3 --single-branch
+    git clone https://github.com/wallarm/ingress-chart --branch 2.18.1-6 --single-branch
     ```
 2. Обновите предыдущий Helm‑чарт:
 

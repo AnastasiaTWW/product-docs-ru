@@ -30,7 +30,8 @@
 
 * Обработка входящих вебхуков настроена в директиве `source`:
     * Весь HTTP и HTTPS‑трафик поступает на порт Fluentd 9880
-    * TLS‑сертификат для HTTPS‑подключения расположен в файле `/etc/pki/ca.pem`
+    * Сертификат для подключения к Fluentd по HTTPS расположен в файле `/etc/ssl/certs/fluentd.crt`
+    * Приватный ключ сертификата расположен в файле `/etc/ssl/private/fluentd.key`
 * Отправка логов в Splunk и вывод логов настроены в директиве `match`:
     * Логи всех событий копируются из Fluentd и отправляются в Splunk HTTP Event Controller через output‑плагин [fluent-plugin-splunk-hec](https://github.com/splunk/fluent-plugin-splunk-hec)
     * Логи Fluentd дополнительно выводятся в командную строку в формате JSON (19-22 строки кода). Настройка используется для проверки, что события записываются в логи Fluentd
@@ -39,8 +40,9 @@
 <source>
   @type http # input‑плагин для HTTP и HTTPS‑трафика
   port 9880 # порт для входящих запросов
-  <transport tls> # сертификаты для HTTPS‑подключения
-    ca_path /etc/pki/ca.pem
+  <transport tls> # сертификаты для HTTPS‑подключения к Fluentd
+    cert_path /etc/ssl/certs/fluentd.crt
+    private_key_path /etc/ssl/private/fluentd.key
   </transport>
 </source>
 <match **>

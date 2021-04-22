@@ -36,7 +36,8 @@
 
 * Обработка входящих вебхуков настроена в директиве `source`:
     * Весь HTTP и HTTPS‑трафик поступает на порт Fluentd 9880
-    * TLS‑сертификат для HTTPS‑подключения расположен в файле `/etc/pki/ca.pem`
+    * Сертификат для подключения к Fluentd по HTTPS расположен в файле `/etc/ssl/certs/fluentd.crt`
+    * Приватный ключ сертификата расположен в файле `/etc/ssl/private/fluentd.key`
 * Отправка логов в ArcSight Logger и вывод логов настроены в директиве `match`:
     * Логи всех событий копируются из Fluentd и отправляются в ArcSight Logger по IP‑адресу `https://192.168.1.73:514`
     * Логи из Fluentd в ArcSight Logger отправляются в формате JSON по стандарту [Syslog](https://en.wikipedia.org/wiki/Syslog)
@@ -48,7 +49,8 @@
   @type http # input‑плагин для HTTP и HTTPS‑трафика
   port 9880 # порт для входящих запросов
   <transport tls> # сертификаты для HTTPS‑подключения
-    ca_path /etc/pki/ca.pem
+    cert_path /etc/ssl/certs/fluentd.crt
+    private_key_path /etc/ssl/private/fluentd.key
   </transport>
 </source>
 <match **>

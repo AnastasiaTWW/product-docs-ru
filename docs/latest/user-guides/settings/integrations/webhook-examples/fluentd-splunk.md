@@ -14,6 +14,8 @@
 * [Fluentd](#настройка-fluentd), установленный на Debian 10.4 (Buster) и доступный по адресу `https://fluentd‑example‑domain.com`
 * Доступ администратора к Консоли управления Валарм в [EU‑облаке](https://my.wallarm.com) для [настройки webhook‑интеграции](#настройка-webhookинтеграции)
 
+Ссылки на сервисы Splunk Enterprise и Fluentd приведены в документации в качестве примера и недоступны для внешнего использования.
+
 ### Настройка Splunk Enterprise
 
 Логи Fluentd отправляются в Splunk HTTP Event Collector с названием `Wallarm Fluentd logs` и остальными настройками по умолчанию:

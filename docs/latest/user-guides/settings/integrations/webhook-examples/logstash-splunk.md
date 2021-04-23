@@ -14,6 +14,8 @@
 * [Logstash 7.7.0](#настройка-logstash), установленный на Debian 10.4 (Buster) и доступный по адресу `https://logstash.example.domain.com`
 * Доступ администратора к Консоли управления Валарм в [EU‑облаке](https://my.wallarm.com) для [настройки webhook‑интеграции](#настройка-webhookинтеграции)
 
+Ссылки на сервисы Splunk Enterprise и Logstash приведены в документации в качестве примера и недоступны для внешнего использования.
+
 ### Настройка Splunk Enterprise
 
 Логи Logstash отправляются в Splunk HTTP Event Collector с названием `Wallarm Logstash logs` и остальными настройками по умолчанию:

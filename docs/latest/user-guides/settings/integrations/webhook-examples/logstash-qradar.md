@@ -22,7 +22,8 @@
 
 * Обработка входящих вебхуков настроена в секции `input`:
     * Весь HTTP и HTTPS‑трафик поступает на порт Logstash 5044
-    * SSL‑сертификат для HTTPS‑подключения расположен в файле `/etc/pki/ca.pem`
+    * Сертификат для подключения к Logstash по HTTPS расположен в файле `/etc/server.crt`
+    * Приватный ключ сертификата расположен в файле `/etc/server.key`
 * Отправка логов в QRadar и вывод логов настроены в секции `output`:
     * Логи всех событий из Logstash отправляются в QRadar по IP‑адресу `https://109.111.35.11:514`
     * Логи из Logstash в QRadar отправляются в формате JSON по стандарту [Syslog](https://en.wikipedia.org/wiki/Syslog)
@@ -34,7 +35,8 @@ input {
   http { # input‑плагин для HTTP и HTTPS‑трафика
     port => 5044 # порт для входящих запросов
     ssl => true # обработка HTTPS‑трафика
-    ssl_certificate => "/etc/pki/ca.pem" # сертификат для HTTPS‑подключения
+    ssl_certificate => "/etc/server.crt" # сертификат для HTTPS‑подключения
+    ssl_key => "/etc/server.key" # приватный ключ сертификата
   }
 }
 output {

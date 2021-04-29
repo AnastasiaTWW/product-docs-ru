@@ -257,7 +257,7 @@ nav:
         - Обзор правил профиля приложений: user-guides/rules/intro.md
         - Просмотр правил профиля приложений: user-guides/rules/view.md
         - Добавление правил в профиле приложений: user-guides/rules/add-rule.md
-        - Сборка и обновление правил фильтрации: user-guides/rules/compiling.md
+        - Сборка и выгрузка индивидуального набора правил: user-guides/rules/compiling.md
         - Анализ и парсинг запросов: user-guides/rules/request-processing.md
         - Режим фильтрации: user-guides/rules/wallarm-mode-rule.md
         - Маскировка данных: user-guides/rules/sensitive-data-rule.md

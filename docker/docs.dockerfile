@@ -16,7 +16,7 @@ COPY . .
 RUN mkdocs build
 RUN mkdocs build -f mkdocs-2.16.yml
 RUN mkdocs build -f mkdocs-2.14.yml
-RUN mkdocs build -f mkdocs-deprecated.yml
+RUN mkdocs build -f mkdocs-deprecated.yml -q
 
 # production stage
 FROM nginx:1.18-alpine as production-stage

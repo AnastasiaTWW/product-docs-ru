@@ -35,13 +35,27 @@
 /admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/faq/ /faq/waf-ingress-installation/
 /admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-faq/ /faq/waf-aws-via-terraform-installation/
 
-~*^/(2.10|2.12|2.14|2.16)/faq/(?<u>.+)$ /faq/$u
-~*^/(2.10|2.12|2.14|2.16)/api/(?<u>.+)$ /api/$u
-~*^/(2.10|2.12|2.14|2.16)/demo-videos/(?<u>.+)$ /demo-videos/$u
-~*^/2.12/(admin-ru|quickstart-ru|updating-migrating|user-guides|waf-installation|about-wallarm-waf|partner-waf-node)/(?<u>.+)$ /2.12
-~*^/2.12/(attacks-vulns-list|glossary-ru) /2.12
-~*^/2.12/(attacks-vulns-list|glossary-ru)/ /2.12
-~*^/2.10/(?<u>.+)$ /2.12
+/2.12/api/* /api/:splat 301!
+/2.12/faq/* /faq/:splat 301!
+/2.12/demo-videos/* /demo-videos/:splat 301!
+/2.14/api/* /api/:splat 301!
+/2.14/faq/* /faq/:splat 301!
+/2.14/demo-videos/* /demo-videos/:splat 301!
+/2.16/api/* /api/:splat 301!
+/2.16/faq/* /faq/:splat 301!
+/2.16/demo-videos/* /demo-videos/:splat 301!
+/2.12/admin-ru/* /2.12
+/2.12/quickstart-ru/* /2.12
+/2.12/updating-migrating/* /2.12
+/2.12/user-guides/* /2.12
+/2.12/waf-installation/* /2.12
+/2.12/about-wallarm-waf/* /2.12
+/2.12/partner-waf-node/* /2.12
+/2.12/attacks-vulns-list /2.12
+/2.12/attacks-vulns-list/ /2.12
+/2.12/glossary-ru /2.12
+/2.12/glossary-ru/ /2.12
+/2.10/* /2.12
 /2.10/ /2.12
 /2.10 /2.12
 

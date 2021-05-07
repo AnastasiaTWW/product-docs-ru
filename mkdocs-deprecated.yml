@@ -11,7 +11,6 @@ plugins:
         - ru
   - minify:
       minify_html: true
-  - monorepo
   - meta-descriptions
 
 dev_addr: '127.0.0.1:8000'
@@ -86,6 +85,18 @@ site_dir: site/2.12
 nav:
   - Инструкции:
     - Главная: index.md
-  - Валарм API: '!include ./api/mkdocs.yml'
-  - FAQ: '!include ./faq/mkdocs.yml'
-  - Демо‑видео: '!include ./demo-videos/mkdocs.yml'
+  - Валарм API:
+    - Обзор Валарм API: api/overview.md
+    - Примеры запросов к Валарм API: api/request-examples.md 
+  - FAQ:
+    - Совместимость Валарм WAF с версиями NGINX: faq/waf-nginx-compatibility.md
+    - Установка Валарм WAF в AWS с использованием Terraform: faq/waf-aws-via-terraform-installation.md 
+    - Установка Ingress‑контроллера Валарм WAF: faq/waf-ingress-installation.md
+    - Ошибки после установки Валарм WAF: faq/common-errors-after-waf-installation.md
+    - Страница со статусами сервисов Валарм: faq/wallarm-status-page.md
+  - Демо‑видео:
+    - Обзор Валарм WAF и способов установки: demo-videos/waf-overview.md
+    - Анализ обнаруженных событий: demo-videos/waf-events-inspection.md
+    - Обзор Сканера Валарм: demo-videos/scanner-overview.md
+    - Уведомления и реакции на события в системе: demo-videos/notifications.md
+    - Обзор Валарм FAST и способов установки: demo-videos/fast-overview.md

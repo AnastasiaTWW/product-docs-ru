@@ -5,7 +5,7 @@
 [link-saml-sso-roles]:      https://www.oasis-open.org/committees/download.php/27819/sstc-saml-tech-overview-2.0-cd-02.pdf     
 
 
-#   Введение
+# Обзор интеграции с решением SAML SSO
 
 Вы можете использовать технологию единого входа (Single Sign‑On, SSO) для аутентификации пользователей вашей компании на портале Валарм, если ваша компания уже использует решение для [SAML][link-saml] SSO.
 

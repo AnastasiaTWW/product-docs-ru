@@ -87,7 +87,7 @@ nav:
   - Инструкции:
     - Главная: index.md
     - О Валарм WAF:
-      - Введение: about-wallarm-waf/overview.md
+      - Как работает Валарм WAF: about-wallarm-waf/overview.md
       - Защита от атак: about-wallarm-waf/protecting-against-attacks.md
       - Обнаружение уязвимостей: about-wallarm-waf/detecting-vulnerabilities.md
       - Типы атак и уязвимостей: attacks-vulns-list.md
@@ -101,11 +101,11 @@ nav:
       - Настройка проксирования трафика: quickstart-ru/qs-setup-proxy-ru.md 
       - Проверка работоспобности WAF‑ноды: quickstart-ru/qs-check-operation-ru.md
     - Руководство администратора:
-      - Введение: admin-ru/admin-intro-ru.md
+      - Введение в руководство администратора: admin-ru/admin-intro-ru.md
       - Установка:
         - Поддерживаемые платформы: admin-ru/supported-platforms.md
         - NGINX:
-          - Обзор вариантов установки: admin-ru/installation-nginx-overview.md
+          - Обзор вариантов установки с NGINX: admin-ru/installation-nginx-overview.md
           - Установка динамического модуля для NGINX stable: waf-installation/nginx/dynamic-module.md
           - Установка динамического модуля для NGINX из репозитория Debian/CentOS: waf-installation/nginx/dynamic-module-from-distr.md
           - Установка динамического модуля для NGINX Plus: waf-installation/nginx-plus.md
@@ -117,26 +117,26 @@ nav:
             - Публикация приложения с использованием Helm Charts: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-helm.md
             - Публикация приложения с использованием Kubernetes-манифестов: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-manifest.md
         - Облачные платформы:
-          - Обзор вариантов установки: admin-ru/installation-guides/clouds-intro.md
+          - Обзор вариантов установки на облачные платформы: admin-ru/installation-guides/clouds-intro.md
           - Установка в Amazon AWS:
-            - Установка и настройка WAF‑ноды: admin-ru/installation-ami-ru.md
+            - Установка и настройка WAF‑ноды (AWS): admin-ru/installation-ami-ru.md
             - Создание образа AMI c WAF‑нодой: admin-ru/installation-guides/amazon-cloud/create-image.md
             - Установка WAF‑ноды с использованием Terraform:
-              - Обзор: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md
+              - Введение в установку WAF‑ноды с Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md
               - Быстрый старт примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-quick-start.md
               - Описание примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-code-desc.md
             - Автоматическое масштабирование WAF‑ноды:
-              - Обзор: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
+              - Введение в автоматическое масштабирование WAF‑ноды в AWS: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
               - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
-              - Настройка балансировки входящих сообщений: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
+              - Настройка балансировки входящих сообщений в AWS: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
           - Установка на Google Cloud Platform:
-            - Установка и настройка WAF‑ноды: admin-ru/installation-gcp-ru.md
+            - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md
             - Создание образа виртуальной машины c WAF‑нодой: admin-ru/installation-guides/google-cloud/create-image.md
             - Автоматическое масштабирование WAF‑нод:
-              - Обзор: admin-ru/installation-guides/google-cloud/autoscaling-overview.md
+              - Введение в автоматическое масштабирование WAF‑ноды в GCP: admin-ru/installation-guides/google-cloud/autoscaling-overview.md
               - Создание шаблона экземпляра WAF‑ноды: admin-ru/installation-guides/google-cloud/creating-instance-template.md
               - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
-              - Настройка балансировки входящих сообщений: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
+              - Настройка балансировки входящих сообщений в GCP: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
           - Установка в Яндекс.Облаке: admin-ru/installation-guides/install-in-yandex-cloud.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md
         - Запуск Docker‑образа на основе Envoy: admin-ru/installation-guides/envoy/envoy-docker.md
@@ -173,16 +173,16 @@ nav:
         - Работа с логами WAF‑ноды: admin-ru/configure-logging.md
         - Настройка динамического преобразования доменного имени: admin-ru/configure-dynamic-dns-resolution-nginx.md
         - Использование Single Sign‑On (SSO):
-          - Введение: admin-ru/configuration-guides/sso/intro.md
+          - Обзор интеграции с решением SAML SSO: admin-ru/configuration-guides/sso/intro.md
           - Подключение SSO с G Suite:
-            - Обзор: admin-ru/configuration-guides/sso/gsuite/overview.md
-            - Шаг 1. Генерация параметров на стороне Валарм: admin-ru/configuration-guides/sso/gsuite/setup-sp.md
+            - Обзор процесса подключения SSO с G Suite: admin-ru/configuration-guides/sso/gsuite/overview.md
+            - Шаг 1. Генерация параметров на стороне Валарм (G Suite): admin-ru/configuration-guides/sso/gsuite/setup-sp.md
             - Шаг 2. Создание и настройка приложения в G Suite: admin-ru/configuration-guides/sso/gsuite/setup-idp.md
             - Шаг 3. Перенос метаданных сервиса G Suite в мастер настройки Валарм: admin-ru/configuration-guides/sso/gsuite/metadata-transfer.md
             - Шаг 4. Разрешение доступа к приложению Валарм на стороне G Suite: admin-ru/configuration-guides/sso/gsuite/allow-access-to-wl.md
           - Подключение SSO c Okta:
-            - Обзор: admin-ru/configuration-guides/sso/okta/overview.md
-            - Шаг 1. Генерация параметров на стороне Валарм: admin-ru/configuration-guides/sso/okta/setup-sp.md
+            - Обзор процесса подключения SSO с Okta: admin-ru/configuration-guides/sso/okta/overview.md
+            - Шаг 1. Генерация параметров на стороне Валарм (Okta): admin-ru/configuration-guides/sso/okta/setup-sp.md
             - Шаг 2. Создание и настройка приложения в Okta: admin-ru/configuration-guides/sso/okta/setup-idp.md
             - Шаг 3. Перенос метаданных сервиса Okta в мастер настройки Валарм: admin-ru/configuration-guides/sso/okta/metadata-transfer.md
             - Шаг 4. Разрешение доступа к приложению Валарм на стороне Okta: admin-ru/configuration-guides/sso/okta/allow-access-to-wl.md
@@ -194,7 +194,7 @@ nav:
           - Зеркалирование репозитория Валарм для CentOS: admin-ru/integration-guides/repo-mirroring/centos/how-to-mirror-repo-artifactory.md
           - Установка пакетов Валарм из репозитория JFrog Artifactory для CentOS: admin-ru/integration-guides/repo-mirroring/centos/how-to-use-mirrored-repo.md
         - Мониторинг WAF‑ноды:
-          - Введение: admin-ru/monitoring/intro.md
+          - Введение в работу мониторинга: admin-ru/monitoring/intro.md
           - Получение метрик: admin-ru/monitoring/fetching-metrics.md
           - Доступные метрики: admin-ru/monitoring/available-metrics.md
           - Примеры выгрузки и работы с метриками:
@@ -220,9 +220,9 @@ nav:
           - Адреса сканера для RU‑облака: admin-ru/scanner-address-ru-ru.md
         - Обращение в поддержку Валарм для остановки сканера: admin-ru/scanner-complaint-ru.md
     - Руководство пользователя:
-      - Введение: user-guides/user-intro.md
+      - Введение в руководство пользователя: user-guides/user-intro.md
       - Работа с дэшбордами:
-        - Обзор: user-guides/dashboard/intro.md
+        - Обзор дэшбордов: user-guides/dashboard/intro.md
         - Дэшборд WAF: user-guides/dashboard/waf.md
         - Дэшборд "Сканер": user-guides/dashboard/scanner.md
       - Работа с событиями:
@@ -241,7 +241,7 @@ nav:
         - Работа с сетевым периметром: user-guides/scanner/check-scope.md
         - Зарезервированные домены: user-guides/scanner/reserved-domains.md
         - Настройка сканера:
-          - Обзор: user-guides/scanner/configure-scanner.md
+          - Общие настройки сканера: user-guides/scanner/configure-scanner.md
           - Настройка модулей сканера уязвимостей: user-guides/scanner/configure-scanner-modules.md
       - Использование поиска и фильтров:
         - Использование поиска и фильтров: user-guides/search-and-filters/use-search.md

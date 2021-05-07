@@ -14,7 +14,7 @@
 [img-new-frontend-ip-and-port]:     ../../../images/installation-gcp/auto-scaling/common/load-balancing-guide/frontend-configuration.png
 [img-checking-attacks]:             ../../../images/test-attack.png
 
-#   Настройка балансировки входящих сообщений
+# Настройка балансировки входящих сообщений в GCP
 
 Теперь, когда у вас есть [настроенная][link-doc-asg-guide] группа автоматического масштабирования WAF‑нод, необходимо создать и настроить балансировщик нагрузки (Load Balancer), который будет распределять входящий трафик по нескольким WAF‑нодам в группе масштабирования.
 

@@ -46,7 +46,6 @@
 
 **Связанные статьи из документации**
 
-* [Обзор способов установки WAF‑ноды на облачные платформы](../admin-ru/installation-guides/clouds-intro.md)
 * [Список всех платформ, на которые может быть установлена WAF‑нода](../admin-ru/supported-platforms.md)
 
 ## Деплой sidecar‑контейнера Kubernetes с WAF‑нодой

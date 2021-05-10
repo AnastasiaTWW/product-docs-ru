@@ -116,7 +116,6 @@ nav:
             - Публикация приложения с использованием Helm Charts: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-helm.md
             - Публикация приложения с использованием Kubernetes-манифестов: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-manifest.md
         - Облачные платформы:
-          - Обзор вариантов установки на облачные платформы: admin-ru/installation-guides/clouds-intro.md
           - Установка в Amazon AWS:
             - Установка и настройка WAF‑ноды (AWS): admin-ru/installation-ami-ru.md
             - Создание образа AMI c WAF‑нодой: admin-ru/installation-guides/amazon-cloud/create-image.md

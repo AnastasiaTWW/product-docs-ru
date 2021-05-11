@@ -35,7 +35,7 @@
 
 ```bash
 sudo yum remove wallarm-node-repo
-sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.16/x86_64/Packages/wallarm-node-repo-1-5.el7.noarch.rpm
+sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.16/x86_64/Packages/wallarm-node-repo-1-6.el7.noarch.rpm
 ```
 
 **Debian и Ubuntu**

@@ -121,7 +121,7 @@
 === "CentOS 7.x"
     ```bash
     sudo yum install -y epel-release
-    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/Packages/wallarm-node-repo-1-5.el7.noarch.rpm
+    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/Packages/wallarm-node-repo-1-6.el7.noarch.rpm
     ```
 
 --8<-- "../include/access-repo-ru.md"

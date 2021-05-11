@@ -39,7 +39,7 @@
 2. Получите список pod'ов, передав в `<INGRESS_CONTROLLER_NAME>` название Ingress‑контроллера Валарм:
     
     ``` bash
-    kubectl get po -l release=<INGRESS_CONTROLLER_NAME>
+    kubectl get pods -l release=<INGRESS_CONTROLLER_NAME>
     ```
 
     Все pod'ы должны быть в состоянии: **STATUS: Running** и **READY: N/N**. Например:

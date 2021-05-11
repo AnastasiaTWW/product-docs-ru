@@ -44,7 +44,7 @@
 1.  Установите репозиторий Валарм, выполнив следующую команду:
 
     ```bash
-    sudo rpm --install https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/Packages/wallarm-node-repo-1-5.el7.noarch.rpm
+    sudo rpm --install https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/Packages/wallarm-node-repo-1-6.el7.noarch.rpm
     ```
 
 2.  Перейдите во временную директорию (например, `/tmp`)  и синхронизируйте репозиторий Валарм с ней. Для этого выполните следующую команду:

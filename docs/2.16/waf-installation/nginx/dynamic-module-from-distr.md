@@ -72,12 +72,12 @@
 === "CentOS 7.x"
     ```bash
     sudo yum install -y epel-release
-    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.16/x86_64/Packages/wallarm-node-repo-1-5.el7.noarch.rpm
+    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/7/2.16/x86_64/Packages/wallarm-node-repo-1-6.el7.noarch.rpm
     ```
 === "CentOS 8.x"
     ```bash
     sudo yum install -y epel-release
-    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/8/2.16/x86_64/Packages/wallarm-node-repo-1-5.el8.noarch.rpm
+    sudo rpm -i https://repo.wallarm.com/centos/wallarm-node/8/2.16/x86_64/Packages/wallarm-node-repo-1-6.el8.noarch.rpm
     ```
 
 ### 2. Установите NGINX с пакетами Валарм WAF

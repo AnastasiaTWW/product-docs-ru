@@ -11,6 +11,7 @@
 [wallarm-acl-directive]:            configure-parameters-ru.md#wallarm_acl
 [allocating-memory-guide]:          configuration-guides/allocate-resources-for-waf-node.md
 [enable-libdetection-docs]:         configure-parameters-ru.md#wallarm_enable_libdetection
+[mount-config-instr]:               #запуск-контейнера-с-примонтированным-конфигурационным-файлом
 
 # Запуск Docker‑образа на основе NGINX
 

@@ -6,6 +6,7 @@
 [default-ip-blocking-settings]:     ../admin-ru/configure-ip-blocking-nginx-ru.md
 [wallarm-acl-directive]:            ../admin-ru/configure-parameters-ru.md#wallarm_acl
 [allocating-memory-guide]:          ../admin-ru/configuration-guides/allocate-resources-for-waf-node.md
+[mount-config-instr]:               #запуск-контейнера-с-примонтированным-конфигурационным-файлом
 
 # Обновление запущенного Docker‑образа на основе NGINX
 

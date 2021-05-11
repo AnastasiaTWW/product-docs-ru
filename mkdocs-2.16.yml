@@ -128,6 +128,8 @@ nav:
                 - Введение в автоматическое масштабирование WAF‑ноды в AWS: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
                 - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
                 - Настройка балансировки входящих сообщений в AWS: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
+          - Microsoft Azure:
+            - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
           - Google Cloud Platform:
             - Деплой образа WAF‑ноды с GCP Marketplace:
               - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md

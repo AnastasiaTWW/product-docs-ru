@@ -144,6 +144,8 @@ nav:
                 - Создание шаблона экземпляра WAF‑ноды: admin-ru/installation-guides/google-cloud/creating-instance-template.md
                 - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
                 - Настройка балансировки входящих сообщений в GCP: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
+          - Microsoft Azure:
+            - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
           - Установка в Heroku: admin-ru/installation-heroku-ru.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md
         - Отдельная установка модуля постаналитики: admin-ru/installation-postanalytics-ru.md

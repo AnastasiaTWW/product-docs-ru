@@ -146,6 +146,8 @@ nav:
                 - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
                 - Настройка балансировки входящих сообщений в GCP: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
             - Деплой Docker‑образа WAF‑ноды в GCP: waf-installation/cloud-platforms/gcp/docker-container.md
+          - Яндекс.Облако:
+            - Деплой Docker‑образа WAF‑ноды в Яндекс.Облако: waf-installation/cloud-platforms/yandex-cloud/docker-container.md
           - Microsoft Azure:
             - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
           - Установка в Heroku: admin-ru/installation-heroku-ru.md

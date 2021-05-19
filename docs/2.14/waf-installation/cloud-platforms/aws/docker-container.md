@@ -37,12 +37,14 @@
     * `DEPLOY_USER`: email для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
     * `DEPLOY_PASSWORD`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
 
+    В данной инструкции для хранения чувствительных данных используется AWS Secrets Manager.
+
     !!! warning "Доступ к хранилищу с чувствительными данными"
         Чтобы Docker-контейнер прочитал зашифрованные данные из хранилища, необходимо:
         
         * Убедиться, что данные хранятся в том же регионе, в котором вы запускаете Docker-контейнер.
         * Убедиться, что для роли, заданной в определении задания в параметре `executionRoleArn`, добавлена политика **SecretsManagerReadWrite**. [Подробнее о настройке IAM-политик →](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_identity-based-policies.html)
-4. Создайте следующий конфигурационный файл с [определением задания](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) (в определении задания описывается схема работы Docker-контейнера с WAF-нодой):
+4. Создайте локально следующий JSON-файл с [определением задания](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) (в определении задания описывается схема работы Docker-контейнера с WAF-нодой):
 
     === "Для EU-облака Валарм"
          ```json
@@ -68,11 +70,11 @@
                 "secrets": [
                     {
                         "name": "DEPLOY_PASSWORD",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
                     },
                     {
                         "name": "DEPLOY_USER",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
                     }
                 ],
                 "name": "waf-container",
@@ -110,11 +112,11 @@
                 "secrets": [
                     {
                         "name": "DEPLOY_PASSWORD",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
                     },
                     {
                         "name": "DEPLOY_USER",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
                     }
                 ],
                 "name": "waf-container",
@@ -126,24 +128,32 @@
          ```
 
     * `<AWS_ACCOUNT_ID>`: [ID вашего аккаунта AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html).
-    * `<AWS_REGION_FOR_DEPLOY>`: [регион AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html).
     * В объекте `environment` передаются переменные окружения для Docker-контейнера в текстовом виде. Набор доступных переменных окружения приведен в таблице ниже. Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
-    * В объекте `secrets` передаются переменные окружения для Docker-контейнера в виде ссылки на хранилище с чувствительными данными. Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
+    * В объекте `secrets` передаются переменные окружения для Docker-контейнера в виде ссылки на хранилище с чувствительными данными. Формат значений зависит от выбранного хранилища (подробнее в документации [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html) или [AWS Systems Manager → Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html)).
+    
+        Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
 
-    --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
+        --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
     
     * Описание всех параметров конфигурационного файла приведено в [документации AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html).
-5. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register-task-definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
+5. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
 
     ```bash
     aws ecs register-task-definition --cli-input-json file://<PATH_TO_JSON_FILE>/<JSON_FILE_NAME>
     ```
+
+    * `<PATH_TO_JSON_FILE>`: путь до JSON-файла с определением задания на вашей локальной машине.
+    * `<JSON_FILE_NAME>`: название и расширение JSON-файла с определением задания.
 6. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.htmlhttps://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
 
     ```bash
     aws ecs run-task --cluster <CLUSTER_NAME> --launch-type EC2 --task-definition <FAMILY_PARAM_VALUE>
     ```
-7. Перейдите в Консоль AWS → **Elastic Container Service** → кластер, в котором вы запустили задание  → **Tasks** и убедитесь, что задание появилось в списке.
+
+    * `<CLUSTER_NAME>`: название кластера, созданного на шаге 1. Например, `waf-cluster`.
+    * `<FAMILY_PARAM_VALUE>`: название созданного определения задания. Значение должно соответствовать параметру `family` из JSON-файла с определением задания. Например, `wallarm-waf-node`.
+7. Перейдите в Консоль AWS → **Elastic Container Service** → кластер, в котором вы запустили задание → **Tasks** и убедитесь, что задание появилось в списке.
+8. [Протестируйте работу WAF-ноды](#тестирование-работы-waf-ноды).
 
 ## Деплой контейнера с настройкой WAF-ноды через примонтированный файл
 
@@ -154,21 +164,17 @@
 Чтобы запустить контейнер с переменными окружения и конфигурационным файлом, который монтируется из AWS EFS:
 
 1. Войдите в [Консоль AWS](https://console.aws.amazon.com/console/home) и в списке **Services** выберите **Elastic Container Service**.
-2. Перейдите к созданию кластера по кнопке **Create Cluster**:
-      1. Выберите шаблон **EC2 Linux + Networking**.
-      2. Задайте имя кластера, например `waf-cluster`.
-      3. Если требуется, задайте другие настройки по [инструкции](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create_cluster.html).
-      4. Сохраните кластер.
-3. Сохраните чувствительные данные для подключения WAF-ноды к Облаку Валарм в [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html) или [AWS Systems Manager → Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html). К чувствительным данным относятся следующие переменные окружения:
-    * `DEPLOY_USER`: email для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
-    * `DEPLOY_PASSWORD`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
-
-    !!! warning "Доступ к хранилищу с чувствительными данными"
-        Чтобы Docker-контейнер прочитал зашифрованные данные из хранилища, необходимо:
-        
-        * Убедиться, что данные хранятся в том же регионе, в котором вы запускаете Docker-контейнер.
-        * Убедиться, что для роли, заданной в определении задания в параметре `executionRoleArn`, добавлена политика **SecretsManagerReadWrite**. [Подробнее о настройке IAM-политик →](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_identity-based-policies.html)
-4. Создайте локально конфигурационный файл с настройками WAF-ноды. Пример файла с минимальными настройками:
+2. Перейдите к созданию кластера по кнопке **Create Cluster** и задайте следующие настройки:
+      * **Шаблон**: `EC2 Linux + Networking`.
+      * **Имя кластера**: например, `waf-cluster`.
+      * **Provisioning Model**: `On-Demand Instance`.
+      * **EC2 instance type**: `t2.micro`.
+      * **Number of instances**: `1`.
+      * **EC2 AMI ID**: `Amazon Linux 2 Amazon ECS-optimized AMI`.
+      * **Key pair**: [пара ключей](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) для подключения к инстансу по SSH. Подключение по SSH потребуется для загрузки конфигурационного файла в хранилище.
+      * Другие настройки по умолчанию. При изменении других настроек, рекомендуем следовать [инструкции по настройке AWS EFS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/tutorial-efs-volumes.html).
+3. Настройте хранилище AWS EFS, следуя шагам 2-4 из [инструкции AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/tutorial-efs-volumes.html).
+4. На шаге 4 инструкции AWS создайте конфигурационный файл `default` в директории, из которой по умолчанию монтируются файлы. В файле `default` необходимо описать настройки WAF-ноды. Пример файла с минимальными настройками:
 
     ```bash
     server {
@@ -197,8 +203,18 @@
     ```
 
     [Набор директив, которые могут быть указаны в конфигурационном файле →](../../../admin-ru/configure-parameters-ru.md)
-5. Загрузите конфигурационный файл в хранилище AWS EFS, следуя шагам 1-4 из [инструкции AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/tutorial-efs-volumes.html).
-6. Создайте следующий конфигурационный файл с [определением задания](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) (в определении задания описывается схема работы Docker-контейнера с WAF-нодой):
+5. Сохраните чувствительные данные для подключения WAF-ноды к Облаку Валарм в [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html) или [AWS Systems Manager → Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html). К чувствительным данным относятся следующие переменные окружения:
+    * `DEPLOY_USER`: email для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
+    * `DEPLOY_PASSWORD`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
+    
+    В данной инструкции для хранения чувствительных данных используется AWS Secrets Manager.
+
+    !!! warning "Доступ к хранилищу с чувствительными данными"
+        Чтобы Docker-контейнер прочитал зашифрованные данные из хранилища, необходимо:
+        
+        * Убедиться, что данные хранятся в том же регионе, в котором вы запускаете Docker-контейнер.
+        * Убедиться, что для роли, заданной в определении задания в параметре `executionRoleArn`, добавлена политика **SecretsManagerReadWrite**. [Подробнее о настройке IAM-политик →](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_identity-based-policies.html)
+6. Создайте локально следующий JSON-файл с [определением задания](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) (в определении задания описывается схема работы Docker-контейнера с WAF-нодой):
 
     === "Для EU-облака Валарм"
          ```json
@@ -224,11 +240,11 @@
                 "secrets": [
                     {
                         "name": "DEPLOY_PASSWORD",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
                     },
                     {
                         "name": "DEPLOY_USER",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
                     }
                 ],
                 "name": "waf-container",
@@ -277,11 +293,11 @@
                 "secrets": [
                     {
                         "name": "DEPLOY_PASSWORD",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_PASSWORD_PARAMETER_NAME>::"
                     },
                     {
                         "name": "DEPLOY_USER",
-                        "valueFrom": "arn:aws:secretsmanager:<AWS_REGION_FOR_DEPLOY>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
+                        "valueFrom": "arn:aws:secretsmanager:<SECRETS_MANAGER_AWS_REGION>:<AWS_ACCOUNT_ID>:secret:<SECRET_NAME>:<DEPLOY_USER_PARAMETER_NAME>::"
                     }
                 ],
                 "name": "waf-container",
@@ -302,7 +318,6 @@
          ```
 
     * `<AWS_ACCOUNT_ID>`: [ID вашего аккаунта AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html).
-    * `<AWS_REGION_FOR_DEPLOY>`: [регион AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html).
     * `<PATH_FOR_MOUNTED_CONFIG>`: директория контейнера, в которую монтируется конфигурационный файл. Конфигурационный файл может быть примонтирован в директории контейнера, которые использует NGINX:
 
         * `/etc/nginx/conf.d` — общие настройки
@@ -315,26 +330,39 @@
     * `<VOLUME_NAME>`: название объекта `volumes`, в котором необходимо описать хранилище AWS EFS.
     * `<EFS_FILE_SYSTEM_ID>`: ID файловой системы AWS EFS, в которой хранится конфигурационный файл для монтирования. ID отображается в Консоли AWS → **Services** → **EFS** → **File systems**.
     * В объекте `environment` передаются переменные окружения для Docker-контейнера в текстовом виде. Набор доступных переменных окружения приведен в таблице ниже. Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
-    * В объекте `secrets` передаются переменные окружения для Docker-контейнера в виде ссылки на хранилище с чувствительными данными. Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
+    * В объекте `secrets` передаются переменные окружения для Docker-контейнера в виде ссылки на хранилище с чувствительными данными. Формат значений зависит от выбранного хранилища (подробнее в документации [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html) или [AWS Systems Manager → Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html)).
+    
+        Рекомендуется передавать переменные `DEPLOY_USER` и `DEPLOY_PASSWORD` в объекте `secrets`.
 
-    --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
+        --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
     
     * Описание всех параметров конфигурационного файла приведено в [документации AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html).
-7. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register-task-definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
+7. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
 
     ```bash
     aws ecs register-task-definition --cli-input-json file://<PATH_TO_JSON_FILE>/<JSON_FILE_NAME>
     ```
+
+    * `<PATH_TO_JSON_FILE>`: путь до JSON-файла с определением задания на вашей локальной машине.
+    * `<JSON_FILE_NAME>`: название и расширение JSON-файла с определением задания.
 8. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.htmlhttps://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
 
     ```bash
     aws ecs run-task --cluster <CLUSTER_NAME> --launch-type EC2 --task-definition <FAMILY_PARAM_VALUE>
     ```
-9. Перейдите в Консоль AWS → **Elastic Container Service** → кластер, в котором вы запустили задание  → **Tasks** и убедитесь, что задание появилось в списке.
+
+    * `<CLUSTER_NAME>`: название кластера, созданного на шаге 1. Например, `waf-cluster`.
+    * `<FAMILY_PARAM_VALUE>`: название созданного определения задания. Значение должно соответствовать параметру `family` из JSON-файла с определением задания. Например, `wallarm-waf-node`.
+9.  Перейдите в Консоль AWS → **Elastic Container Service** → кластер, в котором вы запустили задание → **Tasks** и убедитесь, что задание появилось в списке.
+10. [Протестируйте работу WAF-ноды](#тестирование-работы-waf-ноды).
 
 ## Тестирование работы WAF-ноды
 
-1. В Консоли AWS перейдите к запущенному заданию и скопируйте IP-адрес контейнера.
+1. В Консоли AWS откройте запущенное задание и скопируйте IP-адрес контейнера из поля **External Link**.
+
+    ![!Настройка экземпляра контейнера](../../../images/waf-installation/aws/container-copy-ip.png)
+
+    Если IP-адрес отсутствует, убедитесь, что задание и контейнер находятся в статусе **RUNNING**.
 2. Отправьте тестовый запрос с атаками [SQLI](../../../attacks-vulns-list.md#sqlинъекция-sql-injection) и [XSS](../../../attacks-vulns-list.md#межсайтовый-скриптинг-англ-cross-site-scripting-xss) на скопированный адрес:
 
     ```

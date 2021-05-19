@@ -141,6 +141,7 @@ nav:
             - Деплой Docker‑образа WAF‑ноды в GCP: waf-installation/cloud-platforms/gcp/docker-container.md
           - Яндекс.Облако:
             - Деплой образа WAF‑ноды с маркетплейса Яндекс.Облака: admin-ru/installation-guides/install-in-yandex-cloud.md
+            - Деплой Docker‑образа WAF‑ноды в Яндекс.Облако: waf-installation/cloud-platforms/yandex-cloud/docker-container.md
           - Microsoft Azure:
             - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md

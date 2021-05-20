@@ -129,11 +129,6 @@ nav:
                 - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
                 - Настройка балансировки входящих сообщений в AWS: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
             - Деплой Docker‑образа WAF‑ноды в AWS: waf-installation/cloud-platforms/aws/docker-container.md
-          - Microsoft Azure:
-            - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
-          - Alibaba Cloud:
-            - Деплой Docker‑образа WAF‑ноды в Alibaba Cloud: waf-installation/cloud-platforms/alibaba-cloud/docker-container.md
-          - Деплой WAF‑ноды в частное облако: waf-installation/cloud-platforms/private-cloud.md
           - Google Cloud Platform:
             - Деплой образа WAF‑ноды с GCP Marketplace:
               - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md
@@ -147,6 +142,11 @@ nav:
           - Яндекс.Облако:
             - Деплой образа WAF‑ноды с маркетплейса Яндекс.Облака: admin-ru/installation-guides/install-in-yandex-cloud.md
             - Деплой Docker‑образа WAF‑ноды в Яндекс.Облако: waf-installation/cloud-platforms/yandex-cloud/docker-container.md
+          - Microsoft Azure:
+            - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
+          - Alibaba Cloud:
+            - Деплой Docker‑образа WAF‑ноды в Alibaba Cloud: waf-installation/cloud-platforms/alibaba-cloud/docker-container.md
+          - Деплой WAF‑ноды в частное облако: waf-installation/cloud-platforms/private-cloud.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md
         - Запуск Docker‑образа на основе Envoy: admin-ru/installation-guides/envoy/envoy-docker.md
         - Отдельная установка модуля постаналитики: admin-ru/installation-postanalytics-ru.md

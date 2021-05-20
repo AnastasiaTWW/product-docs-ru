@@ -131,6 +131,8 @@ nav:
             - Деплой Docker‑образа WAF‑ноды в AWS: waf-installation/cloud-platforms/aws/docker-container.md
           - Microsoft Azure:
             - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
+          - Alibaba Cloud:
+            - Деплой Docker‑образа WAF‑ноды в Alibaba Cloud: waf-installation/cloud-platforms/alibaba-cloud/docker-container.md
           - Google Cloud Platform:
             - Деплой образа WAF‑ноды с GCP Marketplace:
               - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md

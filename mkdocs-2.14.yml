@@ -152,6 +152,7 @@ nav:
             - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
           - Alibaba Cloud:
             - Деплой Docker‑образа WAF‑ноды в Alibaba Cloud: waf-installation/cloud-platforms/alibaba-cloud/docker-container.md
+          - Деплой WAF‑ноды в частное облако: waf-installation/cloud-platforms/private-cloud.md
           - Установка в Heroku: admin-ru/installation-heroku-ru.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md
         - Отдельная установка модуля постаналитики: admin-ru/installation-postanalytics-ru.md

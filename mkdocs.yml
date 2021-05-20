@@ -102,7 +102,7 @@ nav:
     - Руководство администратора:
       - Введение в руководство администратора: admin-ru/admin-intro-ru.md
       - Установка:
-        - Поддерживаемые платформы: admin-ru/supported-platforms.md
+        - Способы деплоя WAF‑ноды: admin-ru/supported-platforms.md
         - NGINX:
           - Обзор вариантов установки с NGINX: admin-ru/installation-nginx-overview.md
           - Установка динамического модуля для NGINX stable: waf-installation/nginx/dynamic-module.md

@@ -116,27 +116,37 @@ nav:
             - Публикация приложения с использованием Helm Charts: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-helm.md
             - Публикация приложения с использованием Kubernetes-манифестов: admin-ru/installation-guides/kubernetes/wallarm-sidecar-container-manifest.md
         - Облачные платформы:
-          - Обзор вариантов установки на облачные платформы: admin-ru/installation-guides/clouds-intro.md
-          - Установка в Amazon AWS:
-            - Установка и настройка WAF‑ноды (AWS): admin-ru/installation-ami-ru.md
-            - Создание образа AMI c WAF‑нодой: admin-ru/installation-guides/amazon-cloud/create-image.md
-            - Установка WAF‑ноды с использованием Terraform:
-              - Введение в установку WAF‑ноды с Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md
-              - Быстрый старт примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-quick-start.md
-              - Описание примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-code-desc.md
-            - Автоматическое масштабирование WAF‑ноды:
-              - Введение в автоматическое масштабирование WAF‑ноды в AWS: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
-              - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
-              - Настройка балансировки входящих сообщений в AWS: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
-          - Установка на Google Cloud Platform:
-            - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md
-            - Создание образа виртуальной машины c WAF‑нодой: admin-ru/installation-guides/google-cloud/create-image.md
-            - Автоматическое масштабирование WAF‑нод:
-              - Введение в автоматическое масштабирование WAF‑ноды в GCP: admin-ru/installation-guides/google-cloud/autoscaling-overview.md
-              - Создание шаблона экземпляра WAF‑ноды: admin-ru/installation-guides/google-cloud/creating-instance-template.md
-              - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
-              - Настройка балансировки входящих сообщений в GCP: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
-          - Установка в Яндекс.Облаке: admin-ru/installation-guides/install-in-yandex-cloud.md
+          - Amazon AWS:
+            - Деплой образа WAF‑ноды с AWS Marketplace:
+              - Установка и настройка WAF‑ноды (AWS): admin-ru/installation-ami-ru.md
+              - Создание образа AMI c WAF‑нодой: admin-ru/installation-guides/amazon-cloud/create-image.md
+              - Установка WAF‑ноды с использованием Terraform:
+                - Введение в установку WAF‑ноды с Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-intro.md
+                - Быстрый старт примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-quick-start.md
+                - Описание примера кода Terraform: admin-ru/installation-guides/amazon-cloud/deploy-waf-via-terraform/deploy-waf-via-terraform-code-desc.md
+              - Автоматическое масштабирование WAF‑ноды:
+                - Введение в автоматическое масштабирование WAF‑ноды в AWS: admin-ru/installation-guides/amazon-cloud/autoscaling-overview.md
+                - Настройка автоматического масштабирования WAF‑нод: admin-ru/installation-guides/amazon-cloud/autoscaling-group-guide.md
+                - Настройка балансировки входящих сообщений в AWS: admin-ru/installation-guides/amazon-cloud/load-balancing-guide.md
+            - Деплой Docker‑образа WAF‑ноды в AWS: waf-installation/cloud-platforms/aws/docker-container.md
+          - Google Cloud Platform:
+            - Деплой образа WAF‑ноды с GCP Marketplace:
+              - Установка и настройка WAF‑ноды (GCP): admin-ru/installation-gcp-ru.md
+              - Создание образа виртуальной машины c WAF‑нодой: admin-ru/installation-guides/google-cloud/create-image.md
+              - Автоматическое масштабирование WAF‑нод:
+                - Введение в автоматическое масштабирование WAF‑ноды в GCP: admin-ru/installation-guides/google-cloud/autoscaling-overview.md
+                - Создание шаблона экземпляра WAF‑ноды: admin-ru/installation-guides/google-cloud/creating-instance-template.md
+                - Создание управляемой группы экземпляров виртуальных машин с автоматическим масштабированием: admin-ru/installation-guides/google-cloud/creating-autoscaling-group.md
+                - Настройка балансировки входящих сообщений в GCP: admin-ru/installation-guides/google-cloud/load-balancing-guide.md
+            - Деплой Docker‑образа WAF‑ноды в GCP: waf-installation/cloud-platforms/gcp/docker-container.md
+          - Яндекс.Облако:
+            - Деплой образа WAF‑ноды с маркетплейса Яндекс.Облака: admin-ru/installation-guides/install-in-yandex-cloud.md
+            - Деплой Docker‑образа WAF‑ноды в Яндекс.Облако: waf-installation/cloud-platforms/yandex-cloud/docker-container.md
+          - Microsoft Azure:
+            - Деплой Docker‑образа WAF‑ноды в Azure: waf-installation/cloud-platforms/azure/docker-container.md
+          - Alibaba Cloud:
+            - Деплой Docker‑образа WAF‑ноды в Alibaba Cloud: waf-installation/cloud-platforms/alibaba-cloud/docker-container.md
+          - Деплой WAF‑ноды в частное облако: waf-installation/cloud-platforms/private-cloud.md
         - Установка на платформу Kong: admin-ru/installation-kong-ru.md
         - Запуск Docker‑образа на основе Envoy: admin-ru/installation-guides/envoy/envoy-docker.md
         - Отдельная установка модуля постаналитики: admin-ru/installation-postanalytics-ru.md

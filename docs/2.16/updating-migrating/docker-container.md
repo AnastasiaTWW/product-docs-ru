@@ -7,6 +7,7 @@
 [wallarm-acl-directive]:            ../admin-ru/configure-parameters-ru.md#wallarm_acl
 [allocating-memory-guide]:          ../admin-ru/configuration-guides/allocate-resources-for-waf-node.md
 [enable-libdetection-docs]:         ../admin-ru/configure-parameters-ru.md#wallarm_enable_libdetection
+[mount-config-instr]:               #запуск-контейнера-с-примонтированным-конфигурационным-файлом
 
 # Обновление запущенного Docker‑образа на основе NGINX
 
@@ -135,7 +136,7 @@ docker stop <RUNNING_CONTAINER_NAME>
     * `/etc/nginx/sites-enabled` — настройки виртуальных хостов
     * `/var/www/html` — статические файлы
 
-    Вы можете примонтировать необходимые конфигурационные файлы в перечисленные директории. Директивы WAF‑ноды необходимо описать в файле контейнера `/etc/nginx/sites-enabled/default`.
+    Вы можете примонтировать необходимые конфигурационные файлы в перечисленные директории. Директивы WAF‑ноды описываются в файле контейнера `/etc/nginx/sites-enabled/default`.
 
 ## Шаг 4: Протестируйте работу Валарм WAF
 

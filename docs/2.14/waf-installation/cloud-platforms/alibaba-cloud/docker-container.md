@@ -45,11 +45,11 @@
     * `<DEPLOY_PASSWORD>`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
 6. Запустите Docker-контейнер с настройками WAF-ноды через переменными окружения.
 
-    === "Команда для EU‑облака"
+    === "Команда для EU‑облака Валарм"
         ```bash
         docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF> -p 80:80 wallarm/node:2.14
         ```
-    === "Команда для RU‑облака"
+    === "Команда для RU‑облака Валарм"
         ```bash
         docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF> -e WALLARM_API_HOST='api.wallarm.ru' -p 80:80 wallarm/node:2.14
         ```

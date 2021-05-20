@@ -73,9 +73,9 @@
     * `--dns-name-label`: метка DNS-имени для контейнера
     * `--ports`: порт, на котором будет доступен контейнер
     * `--image`: название Docker-образа с WAF-нодой
-    * `--environment-variables`: переменные окружения с настройками WAF-ноды из списка ниже
+    * `--environment-variables`: переменные окружения с настройками WAF-ноды из таблицы ниже
 
-    --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
+        --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
 4. Перейдите на [портал Azure](https://portal.azure.com/) и убедитесь, что созданный ресурс отображается в списке ресурсов.
 
 ## Деплой контейнера с настройкой WAF-ноды через примонтированный файл
@@ -121,6 +121,8 @@
         }
     }
     ```
+
+    [Набор директив, которые могут быть указаны в конфигурационном файле →](../../../admin-ru/configure-parameters-ru.md)
 4. Расположите конфигурационный файл одним из способов, который подходит для подключения томов данных в Azure. Все способы описаны в разделе [**Подключение томов данных** в документации Azure](https://docs.microsoft.com/ru-ru/azure/container-instances/container-instances-volume-azure-files).
 
     В данной инструкции конфигурационный файл монтируется из репозитория Git.
@@ -164,11 +166,11 @@
         * `/etc/nginx/sites-enabled` — настройки виртуальных хостов
         * `/var/www/html` — статические файлы
 
-        Директивы WAF‑ноды необходимо описать в файле контейнера `/etc/nginx/sites-enabled/default`.
+        Директивы WAF‑ноды описываются в файле контейнера `/etc/nginx/sites-enabled/default`.
     
-    * `--environment-variables`: переменные окружения с параметрами для подключения к Облаку Валарм из списка ниже
+    * `--environment-variables`: переменные окружения с параметрами для подключения к Облаку Валарм из таблицы ниже
 
-    --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
+        --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
 6. Перейдите на [портал Azure](https://portal.azure.com/) и убедитесь, что созданный ресурс отображается в списке ресурсов.
 
 ## Тестирование работы WAF-ноды

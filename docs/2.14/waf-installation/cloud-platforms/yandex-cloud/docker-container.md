@@ -15,7 +15,7 @@
 * Доступ к [консоли управления](https://console.cloud.yandex.ru/) Яндекс.Облаком
 * Платежный аккаунт на [странице биллинга](https://console.cloud.yandex.ru/billing) в статусе `ACTIVE` или `TRIAL_ACTIVE`
 * Созданный каталог. По умолчанию создается каталог `default`, для настройки нового каталога используйте [инструкцию](https://cloud.yandex.ru/docs/resource-manager/operations/folder/create)
-* [Установленный и настроенный CLI для работы с Яндекс.Облаком](https://cloud.yandex.ru/docs/cli/quickstart)
+* Для деплоя контейнера с настройкой WAF-ноды через переменные окружения: [установленный и настроенный CLI для работы с Яндекс.Облаком](https://cloud.yandex.ru/docs/cli/quickstart)
 * Доступ к аккаунту с ролью **Деплой** или **Администратор** и отключенная двухфакторная аутентификация в Консоли управления Валарм для [RU‑облака](https://my.wallarm.ru) или [EU‑облака](https://my.wallarm.com)
 
 ## Способы конфигурации Docker-контейнера с WAF-нодой
@@ -79,7 +79,7 @@
 
     ![!Настройка экземпляра контейнера](../../../images/waf-installation/yandex-cloud/create-vm.png)
 2. Подключитесь к инстансу по SSH, используя [инструкцию Яндекс.Облака](https://cloud.yandex.ru/docs/compute/operations/vm-connect/ssh#vm-connect).
-3. Установите в инстансе Docker по [инструкции для подходящей ОС](https://docs.docker.com/engine/install/#server).
+3. Установите в инстансе пакеты Docker по [инструкции для подходящей ОС](https://docs.docker.com/engine/install/#server).
 4. Запишите данные от аккаунта Валарм в локальные переменные окружения инстанса:
 
     ```bash
@@ -120,11 +120,11 @@
     [Набор директив, которые могут быть указаны в конфигурационном файле →](../../../admin-ru/configure-parameters-ru.md)
 6.  Запустите Docker-контейнер с WAF-нодой с примонтированным конфигурационным файлом и переменными окружения.
 
-    === "EU‑облако"
+    === "Команда для EU‑облака Валарм"
         ```bash
         docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -v <INSTANCE_PATH_TO_CONFIG>:<CONTAINER_PATH_FOR_MOUNTING> -p 80:80 wallarm/node:2.14
         ```
-    === "RU‑облако"
+    === "Команда для RU‑облака Валарм"
         ```bash
         docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e WALLARM_API_HOST='api.wallarm.ru' -v <INSTANCE_PATH_TO_CONFIG>:<DIRECTORY_FOR_MOUNTING> -p 80:80 wallarm/node:2.14
         ```
@@ -138,7 +138,8 @@
 
         Директивы WAF‑ноды описываются в файле контейнера `/etc/nginx/sites-enabled/default`.
     
-    * В опции `-e` передаются переменные окружения из таблицы ниже.
+    * `-p`: порт, через который WAF-нода принимает запросы. Значение должно совпадать с портом инстанса.
+    * `-e`: переменные окружения из таблицы ниже.
 
         --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
 7.  [Протестируйте работу WAF-ноды](#тестирование-работы-waf-ноды).

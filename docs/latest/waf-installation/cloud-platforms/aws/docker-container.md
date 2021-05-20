@@ -324,7 +324,7 @@
         * `/etc/nginx/sites-enabled` — настройки виртуальных хостов
         * `/var/www/html` — статические файлы
 
-        Директивы WAF‑ноды необходимо описать в файле контейнера `/etc/nginx/sites-enabled/default`.
+        Директивы WAF‑ноды описываются в файле контейнера `/etc/nginx/sites-enabled/default`.
     
     * `<NAME_FROM_VOLUMES_OBJECT>`: название объекта `volumes`, в котором описано хранилище AWS EFS (значение должно быть идентично `<VOLUME_NAME>`).
     * `<VOLUME_NAME>`: название объекта `volumes`, в котором необходимо описать хранилище AWS EFS.

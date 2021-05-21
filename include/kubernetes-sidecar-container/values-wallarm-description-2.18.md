@@ -2,7 +2,7 @@
 wallarm:
   image:
      repository: wallarm/node
-     tag: 2.18.1-1
+     tag: 2.18.1-2
      pullPolicy: Always
   # Конечная точка Валарм API:
   # wallarm_host_api: "api.wallarm.com" для EU‑облака

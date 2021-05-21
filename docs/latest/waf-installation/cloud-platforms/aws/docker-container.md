@@ -78,7 +78,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "family": "wallarm-waf-node"
@@ -120,7 +120,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "family": "wallarm-waf-node"
@@ -144,7 +144,7 @@
 
     * `<PATH_TO_JSON_FILE>`: путь до JSON-файла с определением задания на вашей локальной машине.
     * `<JSON_FILE_NAME>`: название и расширение JSON-файла с определением задания.
-6. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.htmlhttps://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
+6. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
 
     ```bash
     aws ecs run-task --cluster <CLUSTER_NAME> --launch-type EC2 --task-definition <FAMILY_PARAM_VALUE>
@@ -248,7 +248,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "volumes": [
@@ -301,7 +301,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "volumes": [
@@ -345,7 +345,7 @@
 
     * `<PATH_TO_JSON_FILE>`: путь до JSON-файла с определением задания на вашей локальной машине.
     * `<JSON_FILE_NAME>`: название и расширение JSON-файла с определением задания.
-8. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.htmlhttps://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
+8. Запустите задание в кластере с помощью команды [`aws ecs run-task`](https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html):
 
     ```bash
     aws ecs run-task --cluster <CLUSTER_NAME> --launch-type EC2 --task-definition <FAMILY_PARAM_VALUE>

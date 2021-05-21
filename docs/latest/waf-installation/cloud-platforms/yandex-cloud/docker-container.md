@@ -5,7 +5,7 @@
 
 # Деплой Docker‑образа WAF‑ноды в Яндекс.Облако
 
-Данная инструкция содержит краткое руководство по деплою [Docker‑образа WAF‑ноды (NGINX)](https://hub.docker.com/r/wallarm/node) с помощью облачной платформы Яндекс.Облако. Для деплоя Docker-образа используется [сервис Yandex Container Solution](https://cloud.yandex.ru/docs/cos/б).
+Данная инструкция содержит краткое руководство по деплою [Docker‑образа WAF‑ноды (NGINX)](https://hub.docker.com/r/wallarm/node) с помощью облачной платформы Яндекс.Облако. Для деплоя Docker-образа используется [сервис Yandex Container Solution](https://cloud.yandex.ru/docs/cos/).
 
 !!! warning "Ограничение инструкции"
     В данной инструкции не описана конфигурация для балансировки нагрузки и автоматического масштабирования WAF‑нод. Чтобы выполнить конфигурацию самостоятельно, рекомендуем ознакомиться с [документацией Яндекс.Облака](https://cloud.yandex.ru/docs/compute/operations/instance-groups/create-autoscaled-group).
@@ -46,7 +46,7 @@
             --name <INSTANCE_NAME> \
             --zone=<DEPLOYMENT_ZONE> \
             --public-ip \
-            --container-image=wallarm/node:2.18.1-1 \
+            --container-image=wallarm/node:2.18.1-2 \
             --container-env=DEPLOY_USER=${DEPLOY_USER},DEPLOY_PASSWORD=${DEPLOY_PASSWORD},NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF>
         ```
     === "Команда для RU-облака Валарм"
@@ -55,7 +55,7 @@
             --name <INSTANCE_NAME> \
             --zone=<DEPLOYMENT_ZONE> \
             --public-ip \
-            --container-image=wallarm/node:2.18.1-1 \
+            --container-image=wallarm/node:2.18.1-2 \
             --container-env=DEPLOY_USER=${DEPLOY_USER},DEPLOY_PASSWORD=${DEPLOY_PASSWORD},NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF>,WALLARM_API_HOST=api.wallarm.ru
         ```
 
@@ -122,11 +122,11 @@
 
     === "Команда для EU‑облака Валарм"
         ```bash
-        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -v <INSTANCE_PATH_TO_CONFIG>:<CONTAINER_PATH_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-1
+        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -v <INSTANCE_PATH_TO_CONFIG>:<CONTAINER_PATH_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-2
         ```
     === "Команда для RU‑облака Валарм"
         ```bash
-        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e WALLARM_API_HOST='api.wallarm.ru' -v <INSTANCE_PATH_TO_CONFIG>:<DIRECTORY_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-1
+        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e WALLARM_API_HOST='api.wallarm.ru' -v <INSTANCE_PATH_TO_CONFIG>:<DIRECTORY_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-2
         ```
 
     * `<INSTANCE_PATH_TO_CONFIG>`: путь до конфигурационного файла, созданного на предыдущем шаге. Например: `configs`.

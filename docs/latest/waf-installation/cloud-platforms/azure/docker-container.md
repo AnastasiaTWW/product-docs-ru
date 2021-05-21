@@ -54,7 +54,7 @@
             --name waf-node \
             --dns-name-label wallarm-waf \
             --ports 80 \
-            --image registry-1.docker.io/wallarm/node:2.18.1-1 \
+            --image registry-1.docker.io/wallarm/node:2.18.1-2 \
             --environment-variables DEPLOY_USER='deploy@example.com' DEPLOY_PASSWORD='very_secret' NGINX_BACKEND='example.com'
          ```
     === "Команда для RU-облака Валарм"
@@ -64,7 +64,7 @@
             --name waf-node \
             --dns-name-label wallarm-waf \
             --ports 80 \
-            --image registry-1.docker.io/wallarm/node:2.18.1-1 \
+            --image registry-1.docker.io/wallarm/node:2.18.1-2 \
             --environment-variables DEPLOY_USER='deploy@example.com' DEPLOY_PASSWORD='very_secret' NGINX_BACKEND='example.com' WALLARM_API_HOST='api.wallarm.ru'
          ```
         
@@ -136,7 +136,7 @@
             --name waf-node \
             --dns-name-label wallarm-waf \
             --ports 80 \
-            --image registry-1.docker.io/wallarm/node:2.18.1-1 \
+            --image registry-1.docker.io/wallarm/node:2.18.1-2 \
             --gitrepo-url <URL_OF_GITREPO> \
             --gitrepo-mount-path /etc/nginx/sites-enabled \
             --environment-variables DEPLOY_USER='deploy@example.com' DEPLOY_PASSWORD='very_secret'
@@ -148,7 +148,7 @@
             --name waf-node \
             --dns-name-label wallarm-waf \
             --ports 80 \
-            --image registry-1.docker.io/wallarm/node:2.18.1-1 \
+            --image registry-1.docker.io/wallarm/node:2.18.1-2 \
             --gitrepo-url <URL_OF_GITREPO> \
             --gitrepo-mount-path /etc/nginx/sites-enabled \
             --environment-variables DEPLOY_USER='deploy@example.com' DEPLOY_PASSWORD='very_secret' WALLARM_API_HOST='api.wallarm.ru'

@@ -23,7 +23,7 @@
 
 === "Образ на основе NGINX"
     ``` bash
-    docker pull wallarm/node:2.18.1-1
+    docker pull wallarm/node:2.18.1-2
     ```
 === "Образ на основе Envoy"
     ``` bash

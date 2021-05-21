@@ -5,7 +5,7 @@
 
 # Деплой Docker‑образа WAF‑ноды в Яндекс.Облако
 
-Данная инструкция содержит краткое руководство по деплою [Docker‑образа WAF‑ноды (NGINX)](https://hub.docker.com/r/wallarm/node) с помощью облачной платформы Яндекс.Облако. Для деплоя Docker-образа используется [сервис Yandex Container Solution](https://cloud.yandex.ru/docs/cos/б).
+Данная инструкция содержит краткое руководство по деплою [Docker‑образа WAF‑ноды (NGINX)](https://hub.docker.com/r/wallarm/node) с помощью облачной платформы Яндекс.Облако. Для деплоя Docker-образа используется [сервис Yandex Container Solution](https://cloud.yandex.ru/docs/cos/).
 
 !!! warning "Ограничение инструкции"
     В данной инструкции не описана конфигурация для балансировки нагрузки и автоматического масштабирования WAF‑нод. Чтобы выполнить конфигурацию самостоятельно, рекомендуем ознакомиться с [документацией Яндекс.Облака](https://cloud.yandex.ru/docs/compute/operations/instance-groups/create-autoscaled-group).

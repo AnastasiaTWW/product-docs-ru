@@ -46,7 +46,7 @@
             --name <INSTANCE_NAME> \
             --zone=<DEPLOYMENT_ZONE> \
             --public-ip \
-            --container-image=wallarm/node:2.18.1-1 \
+            --container-image=wallarm/node:2.18.1-2 \
             --container-env=DEPLOY_USER=${DEPLOY_USER},DEPLOY_PASSWORD=${DEPLOY_PASSWORD},NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF>
         ```
     === "Команда для RU-облака Валарм"
@@ -55,7 +55,7 @@
             --name <INSTANCE_NAME> \
             --zone=<DEPLOYMENT_ZONE> \
             --public-ip \
-            --container-image=wallarm/node:2.18.1-1 \
+            --container-image=wallarm/node:2.18.1-2 \
             --container-env=DEPLOY_USER=${DEPLOY_USER},DEPLOY_PASSWORD=${DEPLOY_PASSWORD},NGINX_BACKEND=<HOST_TO_PROTECT_WITH_WAF>,WALLARM_API_HOST=api.wallarm.ru
         ```
 
@@ -122,11 +122,11 @@
 
     === "Команда для EU‑облака Валарм"
         ```bash
-        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -v <INSTANCE_PATH_TO_CONFIG>:<CONTAINER_PATH_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-1
+        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -v <INSTANCE_PATH_TO_CONFIG>:<CONTAINER_PATH_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-2
         ```
     === "Команда для RU‑облака Валарм"
         ```bash
-        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e WALLARM_API_HOST='api.wallarm.ru' -v <INSTANCE_PATH_TO_CONFIG>:<DIRECTORY_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-1
+        docker run -d -e DEPLOY_USER=${DEPLOY_USER} -e DEPLOY_PASSWORD=${DEPLOY_PASSWORD} -e WALLARM_API_HOST='api.wallarm.ru' -v <INSTANCE_PATH_TO_CONFIG>:<DIRECTORY_FOR_MOUNTING> -p 80:80 wallarm/node:2.18.1-2
         ```
 
     * `<INSTANCE_PATH_TO_CONFIG>`: путь до конфигурационного файла, созданного на предыдущем шаге. Например: `configs`.

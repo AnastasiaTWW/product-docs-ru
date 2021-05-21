@@ -78,7 +78,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "family": "wallarm-waf-node"
@@ -120,7 +120,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "family": "wallarm-waf-node"
@@ -248,7 +248,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "volumes": [
@@ -301,7 +301,7 @@
                     }
                 ],
                 "name": "waf-container",
-                "image": "registry-1.docker.io/wallarm/node:2.18.1-1"
+                "image": "registry-1.docker.io/wallarm/node:2.18.1-2"
                 }
             ],
             "volumes": [

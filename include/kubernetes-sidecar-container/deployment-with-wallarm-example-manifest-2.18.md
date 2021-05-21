@@ -15,7 +15,7 @@ spec:
       containers:
       # Элемент Валарм: описание sidecar‑контейнера Валарм
       - name: wallarm
-        image: wallarm/node:2.18.1-1
+        image: wallarm/node:2.18.1-2
         imagePullPolicy: Always
         env:
         # Конечная точка Валарм API:

@@ -620,6 +620,16 @@ font-size: .64rem;
 
 /* Deployment options (most styles are reused from navigation) */
 
+.platforms {
+  grid-template-columns: repeat(3, 1fr);
+} 
+
+@media screen and (max-width: 600px) {
+  .platforms {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .option-card:hover {
   border-color: #FC7303;
   box-shadow: none;
@@ -676,7 +686,7 @@ font-size: .64rem;
 
 .platform-card:hover {
   border-color: #FC7303;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: unset;
 }
 
 .platform-card:hover .options-drop path {

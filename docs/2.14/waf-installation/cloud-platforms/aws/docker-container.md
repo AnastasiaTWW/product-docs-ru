@@ -136,7 +136,7 @@
         --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
     
     * Описание всех параметров конфигурационного файла приведено в [документации AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html).
-5. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
+5. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
 
     ```bash
     aws ecs register-task-definition --cli-input-json file://<PATH_TO_JSON_FILE>/<JSON_FILE_NAME>
@@ -337,7 +337,7 @@
         --8<-- "../include/waf/installation/nginx-docker-env-vars-to-mount.md"
     
     * Описание всех параметров конфигурационного файла приведено в [документации AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html).
-7. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
+7. Создайте определение задания из конфигурационного файла с помощью команды [`aws ecs register‑task‑definition`](https://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html):
 
     ```bash
     aws ecs register-task-definition --cli-input-json file://<PATH_TO_JSON_FILE>/<JSON_FILE_NAME>

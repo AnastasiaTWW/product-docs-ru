@@ -61,7 +61,7 @@
     reposync -r wallarm-node -p .
     ```
     
-После успешного выполнения команды `reposync`, пакеты Валарм будут помещены в поддиректорию `wallarm‑node/Packages` рабочей директории (например, `/tmp/wallarm‑node/Packages`).
+После успешного выполнения команды `reposync`, пакеты Валарм будут помещены в поддиректорию `wallarm-node/Packages` рабочей директории (например, `/tmp/wallarm-node/Packages`).
 
 
 ##  2.  Создание локального RPM‑репозитория в JFrog Artifactory

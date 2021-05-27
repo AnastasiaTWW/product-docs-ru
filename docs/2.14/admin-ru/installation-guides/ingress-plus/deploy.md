@@ -105,7 +105,7 @@ kubectl get nodes
 Для кластера с выключенным RBAC выполните команду `helm init`.
 
 Для кластера c включенным RBAC:
-1.  Убедитесь, что Kubectl работает в контексте с необходимыми правами (у пользователя, с правами которого запущен Kubectl, должна быть корректно настроенная роль `cluster‑admin`).
+1.  Убедитесь, что Kubectl работает в контексте с необходимыми правами (у пользователя, с правами которого запущен Kubectl, должна быть корректно настроенная роль `cluster-admin`).
     
     !!! info
         Некоторые провайдеры кластеров Kubernetes создают и привязывают такую роль при инициализации Kubectl (например, Microsoft), некоторые этого не делают и привязку роли приходится создавать вручную, как, например, в Google Kubernetes Engine:
@@ -136,7 +136,7 @@ kubectl get nodes
         namespace: kube-system
     ```
     
-    В данном файле задается сервисный аккаунт `tiller-account` с ролью `cluster‑admin`.
+    В данном файле задается сервисный аккаунт `tiller-account` с ролью `cluster-admin`.
     
 3.  Примените настройки из файла `helm-rbac.yaml`, выполнив следующую команду:
     
@@ -188,7 +188,7 @@ kubectl create secret docker-registry <имя секрета> --docker-server=<F
 *   пароль для доступа к реестру для параметра `--docker-password`.
 
 !!! info "Пример команды"
-    Чтобы создать секрет `my-secret`, обеспечивающий доступ к реестру Docker Hub для пользователя `example‑user` с паролем `pAssw0rd`, необходимо выполнить следующую команду:
+    Чтобы создать секрет `my-secret`, обеспечивающий доступ к реестру Docker Hub для пользователя `example-user` с паролем `pAssw0rd`, необходимо выполнить следующую команду:
     ```
     kubectl create secret docker-registry my-secret --docker-server=https://index.docker.io/v1/ --docker-username=example-user --docker-password=pAssw0rd
     ```

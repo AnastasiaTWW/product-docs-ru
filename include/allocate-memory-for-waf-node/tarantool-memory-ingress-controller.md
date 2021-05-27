@@ -1,4 +1,4 @@
-Настройка памяти Tarantool для pod'а `ingress‑controller‑wallarm‑tarantool` выполяется в следующем блоке файла `values.yaml`:
+Настройка памяти Tarantool для pod'а `ingress-controller-wallarm-tarantool` выполяется в следующем блоке файла `values.yaml`:
 
 * Для передачи значения в Гбит:
     ```

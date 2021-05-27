@@ -14,9 +14,9 @@
 [doc-gauge-attacks]:        available-metrics.md#количество-зафиксированных-атак
 [doc-unixsock]:             fetching-metrics.md#выгрузка-метрик-с-помощью-утилиты-collectdnagios
 
-#   Выгрузка метрик с помощью утилиты `collectd‑nagios` в Zabbix
+#   Выгрузка метрик с помощью утилиты `collectd-nagios` в Zabbix
 
-В этом документе приводится пример настройки выгрузки метрик WAF‑ноды в систему мониторинга [Zabbix][link-zabbix] с помощью утилиты [`collectd‑nagios`][link-collectd-nagios].
+В этом документе приводится пример настройки выгрузки метрик WAF‑ноды в систему мониторинга [Zabbix][link-zabbix] с помощью утилиты [`collectd-nagios`][link-collectd-nagios].
 
 ##  Схема работы примера
 
@@ -30,7 +30,7 @@
     
     На хосте также развернут [Zabbix‑агент][link-zabbix-agent] версии 4.0 LTS, который:
 
-    *   Получает значения метрик WAF‑ноды, используя утилиту `collectd‑nagios`.
+    *   Получает значения метрик WAF‑ноды, используя утилиту `collectd-nagios`.
     *   Слушает входящие соединения на порту `10050/TCP` ([пассивные проверки][link-zabbix-passive] с помощью Zabbix Appliance).
     *   Передает значения метрик в Zabbix Appliance.  
     
@@ -88,7 +88,7 @@ docker run --name zabbix-appliance -p 80:80 -d zabbix/zabbix-appliance:alpine-4.
 
 --8<-- "../include/monitoring/install-collectd-utils.md"
    
-####    2.  Добавьте возможность запускать утилиту `collectd‑nagios` с повышенными привилегиями от имени пользователя `zabbix`
+####    2.  Добавьте возможность запускать утилиту `collectd-nagios` с повышенными привилегиями от имени пользователя `zabbix`
     
 Для этого с помощью утилиты [`visudo`][link-visudo] добавьте следующую строку в файл `/etc/sudoers`:
    
@@ -96,9 +96,9 @@ docker run --name zabbix-appliance -p 80:80 -d zabbix/zabbix-appliance:alpine-4.
 zabbix ALL=(ALL:ALL) NOPASSWD:/usr/bin/collectd-nagios
 ```
     
-Это позволит пользователю `zabbix` запускать утилиту `collectd‑nagios` с правами суперпользователя с помощью утилиты `sudo` без ввода пароля. 
+Это позволит пользователю `zabbix` запускать утилиту `collectd-nagios` с правами суперпользователя с помощью утилиты `sudo` без ввода пароля. 
  
-!!! info "Запуск `collectd‑nagios` с правами суперпользователя"
+!!! info "Запуск `collectd-nagios` с правами суперпользователя"
     Утилита должна запускаться с правами суперпользователя, поскольку она использует сокет `collectd` (сокет домена Unix) для получения данных. Доступ к этому сокету есть только у суперпользователя.
     
     Также, в качестве альтернативы добавлению пользователя `zabbix` в `sudoers`, вы можете настроить Zabbix‑агент так, чтобы он запускался с правами пользователя `root` (это может представлять угрозу безопасности, поэтому использовать этот способ не рекомендуется). Это достигается с помощью включения опции [`AllowRoot`][link-allowroot] в конфигурационном файле агента.
@@ -111,7 +111,7 @@ zabbix ALL=(ALL:ALL) NOPASSWD:/usr/bin/collectd-nagios
 sudo -u zabbix sudo /usr/bin/collectd-nagios -s /var/run/collectd-unixsock -n curl_json-wallarm_nginx/gauge-attacks -H node.example.local
 ```
 
-Эта команда позволяет пользователю `zabbix` получить значение метрики [`curl_json‑wallarm_nginx/gauge‑attacks`][doc-gauge-attacks] (количество зафиксированных атак) для хоста `node.example.local` с WAF‑нодой.
+Эта команда позволяет пользователю `zabbix` получить значение метрики [`curl_json-wallarm_nginx/gauge-attacks`][doc-gauge-attacks] (количество зафиксированных атак) для хоста `node.example.local` с WAF‑нодой.
 
 **Пример вывода команды:**
     
@@ -128,7 +128,7 @@ UserParameter=wallarm_nginx-gauge-attacks, sudo /usr/bin/collectd-nagios -s /var
 ```
 
 !!! info "Извлечение значения метрики"
-    Для извлечения значения метрики, идущего после `value=` в выводе утилиты `collectd‑nagios` (например, `OKAY: 0 critical, 0 warning, 1 okay | value=0.000000;;;;`), используется перенаправление вывода в утилиту `sed` с последующим выполнением скрипта.
+    Для извлечения значения метрики, идущего после `value=` в выводе утилиты `collectd-nagios` (например, `OKAY: 0 critical, 0 warning, 1 okay | value=0.000000;;;;`), используется перенаправление вывода в утилиту `sed` с последующим выполнением скрипта.
     
     Обратитесь к [документации `sed`][link-sed-docs] для получения дополнительных сведений о синтаксисе его скриптов.
         

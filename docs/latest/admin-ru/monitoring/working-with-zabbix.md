@@ -70,4 +70,4 @@
    
         ![!Просмотр нового значения метрики][img-global-view-16]  
     
-Теперь в дэшборде Zabbix отображаются значения метрики `curl_json‑wallarm_nginx/gauge‑attacks` WAF‑ноды `node.example.local`. 
+Теперь в дэшборде Zabbix отображаются значения метрики `curl_json-wallarm_nginx/gauge-attacks` WAF‑ноды `node.example.local`. 

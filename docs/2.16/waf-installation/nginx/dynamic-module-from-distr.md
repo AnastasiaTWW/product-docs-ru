@@ -167,7 +167,7 @@
 * `/etc/nginx/conf.d/wallarm.conf` с глобальными настройками WAF‑ноды Валарм
 
     Файл используется для настроек, которые применяются ко всем доменам. Чтобы применить разные настройки к отдельным группам доменов, используйте файл `default.conf` или создайте новые файлы конфигурации для каждой группы доменов (например, `example.com.conf` и `test.com.conf`). Более подробная информация о конфигурационных файлах NGINX доступна в [официальной документации NGINX](https://nginx.org/ru/docs/beginners_guide.html).
-* `/etc/nginx/conf.d/wallarm‑status.conf` с настройками мониторинга WAF‑ноды. Описание конфигурации доступно по [ссылке][wallarm-status-instr]
+* `/etc/nginx/conf.d/wallarm-status.conf` с настройками мониторинга WAF‑ноды. Описание конфигурации доступно по [ссылке][wallarm-status-instr]
 * `/etc/default/wallarm-tarantool` или `/etc/sysconfig/wallarm-tarantool` с настройками хранилища Tarantool
 
 #### Режим фильтрации запросов

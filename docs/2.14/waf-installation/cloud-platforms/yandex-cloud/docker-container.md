@@ -38,7 +38,7 @@
     
     * `<DEPLOY_USER>`: email для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
     * `<DEPLOY_PASSWORD>`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
-2. Создайте инстанс с запущенным Docker-контейнером с помощью команды [`yc compute instance create-with-container`](https://cloud.yandex.ru/docs/cli/cli-ref/managed-services/compute/instance/create-with-container):
+2. Создайте инстанс с запущенным Docker-контейнером с помощью команды [`yc compute instance create-with-container`](https://cloud.yandex.ru/docs/cli/cli-ref/managed-services/compute/instance/create-with-container):
 
     === "Команда для EU-облака Валарм"
         ```bash
@@ -67,7 +67,7 @@
 
         --8<-- "../include/waf/installation/nginx-docker-all-env-vars-214.md"
     
-    * Описание всех параметров команды `yc compute instance create-with-container` приведено в [документации Яндекс.Облака](https://cloud.yandex.ru/docs/cli/cli-ref/managed-services/compute/instance/create-with-container).
+    * Описание всех параметров команды `yc compute instance create-with-container` приведено в [документации Яндекс.Облака](https://cloud.yandex.ru/docs/cli/cli-ref/managed-services/compute/instance/create-with-container).
 3.  Перейдите в консоль управления Яндекс.Облаком → **Compute Cloud** → **Virtual machines** и убедитесь, что инстанс появился в списке.
 4.  [Протестируйте работу WAF-ноды](#тестирование-работы-waf-ноды).
 

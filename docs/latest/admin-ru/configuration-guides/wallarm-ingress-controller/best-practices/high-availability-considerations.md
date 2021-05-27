@@ -33,7 +33,7 @@
             targetCPUUtilizationPercentage: 50
             targetMemoryUtilizationPercentage: 50
     ```
-* Запустите как минимум 2 экземпляра модуля постаналитики Валарм на основе базы данных Tarantool. Pod'ы для модулей в Kubernetes содержат в названии `ingress‑controller‑wallarm‑tarantool`. Настройка количества экземпляров выполняется в файле `values.yaml` > атрибут `controller.wallarm.tarantool.replicaCount`. Например:
+* Запустите как минимум 2 экземпляра модуля постаналитики Валарм на основе базы данных Tarantool. Pod'ы для модулей в Kubernetes содержат в названии `ingress-controller-wallarm-tarantool`. Настройка количества экземпляров выполняется в файле `values.yaml` > атрибут `controller.wallarm.tarantool.replicaCount`. Например:
     ```
     controller:
         wallarm:

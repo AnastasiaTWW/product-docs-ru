@@ -11,7 +11,7 @@
 ## Используемые ресурсы
 
 * [Splunk Enterprise](#настройка-splunk-enterprise) с веб‑интерфейсом на URL `https://109.111.35.11:8000` и с API на URL `https://109.111.35.11:8088`
-* [Fluentd](#настройка-fluentd), установленный на Debian 10.4 (Buster) и доступный по адресу `https://fluentd‑example‑domain.com`
+* [Fluentd](#настройка-fluentd), установленный на Debian 10.4 (Buster) и доступный по адресу `https://fluentd-example-domain.com`
 * Доступ администратора к Консоли управления Валарм в [EU‑облаке](https://my.wallarm.com) для [настройки webhook‑интеграции](#настройка-webhookинтеграции)
 
 ### Настройка Splunk Enterprise
@@ -68,7 +68,7 @@
 
     **Пример запроса:**
     ```curl
-    curl -X POST 'https://fluentd‑example‑domain.com' -H "Content-Type: application/json" -H "Authorization: Splunk f44b3179-91aa-44f5-a6f7-202265e10475" -d '{"key1":"value1", "key2":"value2"}'
+    curl -X POST 'https://fluentd-example-domain.com' -H "Content-Type: application/json" -H "Authorization: Splunk f44b3179-91aa-44f5-a6f7-202265e10475" -d '{"key1":"value1", "key2":"value2"}'
     ```
 
     **Логи Fluentd:**

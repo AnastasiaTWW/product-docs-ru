@@ -38,7 +38,7 @@
     
     * `<DEPLOY_USER>`: email для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
     * `<DEPLOY_PASSWORD>`: пароль для аккаунта пользователя **Деплой** или **Администратор** в Консоли управления Валарм.
-2. Создайте инстанс с запущенным Docker-контейнером с помощью команды [`gcloud compute instances create-with-container`](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create-with-container):
+2. Создайте инстанс с запущенным Docker-контейнером с помощью команды [`gcloud compute instances create-with-container`](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create-with-container):
 
     === "Команда для EU-облака Валарм"
         ```bash
@@ -92,7 +92,7 @@
     * `--zone`: [зона](https://cloud.google.com/compute/docs/regions-zones), в которой будет запущен инстанс.
     * `--tags`: теги для инстанса. Через теги настраивается доступность инстанса из других ресурсов. В данном случае передается значение `http-server`, чтобы порт инстанса 80 принимал входящие запросы.
     * Описание всех параметров команды `gcloud compute instances create` приведено в [документации GCP](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create).
-2. Перейдите в [Консоль GCP → **Compute Engine** → VM instances](https://console.cloud.google.com/compute/instances) и убедитесь, что инстанс появился в списке и находится в статусе **RUNNING**.
+2. Перейдите в [Консоль GCP → **Compute Engine** → VM instances](https://console.cloud.google.com/compute/instances) и убедитесь, что инстанс появился в списке и находится в статусе **RUNNING**.
 3. Подключитесь к инстансу по SSH, используя [инструкцию GCP](https://cloud.google.com/compute/docs/instances/ssh).
 4. Установите в инстансе пакеты Docker по [инструкции для подходящей ОС](https://docs.docker.com/engine/install/#server).
 5. Запишите данные от аккаунта Валарм в локальные переменные окружения инстанса:

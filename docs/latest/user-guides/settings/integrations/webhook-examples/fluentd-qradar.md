@@ -10,7 +10,7 @@
 
 ## Используемые ресурсы
 
-* [Fluentd](#настройка-fluentd), установленный на Debian 10.4 (Buster) и доступный по адресу `https://fluentd‑example‑domain.com`
+* [Fluentd](#настройка-fluentd), установленный на Debian 10.4 (Buster) и доступный по адресу `https://fluentd-example-domain.com`
 * [QRadar V7.3.3](#настройка-qradar-опционально), установленный на Linux Red Hat и доступный по IP‑адресу `https://109.111.35.11:514`
 * Доступ администратора к Консоли управления Валарм в [EU‑облаке](https://my.wallarm.com) для [настройки webhook‑интеграции](#настройка-webhookинтеграции)
 
@@ -60,7 +60,7 @@
 
     **Пример запроса:**
     ```curl
-    curl -X POST 'https://fluentd‑example‑domain.com' -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
+    curl -X POST 'https://fluentd-example-domain.com' -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
     ```
 
     **Логи Fluentd:**

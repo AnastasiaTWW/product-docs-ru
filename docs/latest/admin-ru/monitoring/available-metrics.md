@@ -143,8 +143,8 @@ host/plugin[-plugin_instance]/type[-type_instance]
     * `curl_json-wallarm_nginx/gauge-softmemfaults` при превышении памяти для экземпляра proton.db+lom ([`wallarm_ts_request_memory_limit`](../configure-parameters-ru.md#wallarm_ts_request_memory_limit)) 
 * **Значение величины:** `0`
 * **Скорость изменения:**
-    * `curl_json-wallarm_nginx/derive-memfaults` для `curl_json‑wallarm_nginx/gauge‑memfaults`
-    * `curl_json-wallarm_nginx/derive-softmemfaults` для `curl_json‑wallarm_nginx/gauge‑softmemfaults`
+    * `curl_json-wallarm_nginx/derive-memfaults` для `curl_json-wallarm_nginx/gauge-memfaults`
+    * `curl_json-wallarm_nginx/derive-softmemfaults` для `curl_json-wallarm_nginx/gauge-softmemfaults`
 * **Рекомендации при отклонении значений:**
     1. Соберите информацию о текущем состоянии, используя скрипт `/usr/share/wallarm-common/collect-info.sh`.
     2. Передайте сгенерированный файл в [службу поддержки Валарм](mailto:support@wallarm.com).

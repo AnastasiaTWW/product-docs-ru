@@ -156,7 +156,7 @@ host/wallarm-tarantool/type-type_instance
     *   развернуты в облаках Amazon AWS, Google Cloud;
     *   установлены на Linux для платформ NGINX/NGINX Plus и Kong.
 
-*   [С помощью выгрузки данных утилитой `collectd‑nagios`][doc-collectd-nagios].
+*   [С помощью выгрузки данных утилитой `collectd-nagios`][doc-collectd-nagios].
 
     Эта [утилита][link-collectd-nagios] получает значение заданной метрики от `collectd` (на момент вызова утилиты) и представляет его в [Nagios‑совместимом формате][link-nagios-format].
     

@@ -30,7 +30,7 @@
 
     ![!Создание облачной WAF‑ноды](../images/installation-kubernetes/create-cloud-node.png)
 
-3. Клонируйте репозиторий Helm‑чарта Валарм:
+3. Склонируйте репозиторий Helm‑чарта Валарм:
 
     ``` bash
     git clone https://github.com/wallarm/ingress-chart --branch 2.14.0-1 --single-branch

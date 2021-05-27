@@ -114,7 +114,7 @@
     !!! info
         Некоторые поставщики услуг также предоставляют свои инструменты для работы с реестрами Docker, например, [`az acr`][link-acr-docs] для Microsoft Azure Container Registry или [`gcloud`][link-gcloud-docs] для Google Container Registry. Вы можете использовать данные команды вместо `docker`&nbsp;`login` для входа в соответствующие реестры. Для получения более подробной информации обратитесь к документации вашего поставщика услуг.
     
-2.  Клонируйте репозиторий Валарм NGINX Plus Ingress, выполнив следующую команду:
+2.  Склонируйте репозиторий Валарм NGINX Plus Ingress, выполнив следующую команду:
     
     ```
     git clone https://github.com/wallarm/ingress-plus/

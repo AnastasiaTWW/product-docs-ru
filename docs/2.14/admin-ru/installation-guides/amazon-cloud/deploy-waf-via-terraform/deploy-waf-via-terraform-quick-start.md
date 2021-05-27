@@ -20,7 +20,7 @@
 
 ### Шаг 1: Скачивание примера кода Terraform
 
-Пример кода доступен в [репозитории GitHub](https://github.com/wallarm/terraform-example). Клонируйте репозиторий, используя следующую команду:
+Пример кода доступен в [репозитории GitHub](https://github.com/wallarm/terraform-example). Склонируйте репозиторий, используя следующую команду:
 
 ``` bash
 git clone https://github.com/wallarm/terraform-example.git

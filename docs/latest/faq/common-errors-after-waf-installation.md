@@ -25,8 +25,13 @@
 
 При истечении срока действия GPG-ключей для RPM-пакетов Валарм вы можете получить ошибки вида:
 
-* `https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml signature could not be verified for wallarm-node_2.18`
-* `One of the configured repositories failed (Wallarm Node for CentOS 7 - 2.18), and yum doesn't have enough cached data to continue.`
+```
+https://repo.wallarm.com/centos/wallarm-node/7/2.18/x86_64/repodata/repomd.xml:
+[Errno -1] repomd.xml signature could not be verified for wallarm-node_2.18`
+
+One of the configured repositories failed (Wallarm Node for CentOS 7 - 2.18),
+and yum doesn't have enough cached data to continue.`
+```
 
 Чтобы исправить ошибки, связанные с GPG-ключами, необходимо:
 

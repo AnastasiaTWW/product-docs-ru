@@ -1,5 +1,5 @@
-/en/admin-en/configure-tarantool-en.html   /en/admin-en/configuration-guides/allocate-resources-for-waf-node.html
-/en/quickstart-en/qs-intro-en.html         /en/quickstart-en/how-wallarm-works/qs-intro-en.html
+/en/admin-ru/configure-tarantool-en.html   /en/admin-ru/configuration-guides/allocate-resources-for-waf-node.html
+/en/quickstart-ru/qs-intro-en.html         /en/quickstart-ru/how-wallarm-works/qs-intro-en.html
 /ru/admin-ru/configure-tarantool-ru.html   /ru/admin-ru/configuration-guides/allocate-memory-for-waf-node.html
 /ru/quickstart-ru/qs-intro-ru.html         /ru/quickstart-ru/how-wallarm-works/qs-intro-ru/
 ~*^/(en|ru)/user-guides/cloud-ui/blacklist/blacklist.html$ /user-guides/blacklist
@@ -44,6 +44,10 @@
 /2.16/api/* /api/:splat 301!
 /2.16/faq/* /faq/:splat 301!
 /2.16/demo-videos/* /demo-videos/:splat 301!
+/2.18/api/* /api/:splat 301!
+/2.18/faq/* /faq/:splat 301!
+/2.18/demo-videos/* /demo-videos/:splat 301!
+/2.18/api-firewall/* /api-firewall/:splat 301!
 /2.12/admin-ru/* /2.12
 /2.12/quickstart-ru/* /2.12
 /2.12/updating-migrating/* /2.12
@@ -177,3 +181,15 @@
 /2.14/admin-ru/installation-guides/clouds-intro/ /2.14/admin-ru/supported-platforms/#облачные-платформы
 
 /admin-ru/block-part-ru/ /admin-ru/configure-wallarm-mode/
+/user-guides/blacklist/ /user-guides/ip-lists/blacklist/
+/admin-ru/configure-ip-blocking-ru/ /user-guides/ip-lists/blacklist/
+/admin-ru/configure-ip-blocking-iptables-ru/ /user-guides/ip-lists/blacklist/
+/admin-ru/configure-ip-blocking-nginx-ru/ /user-guides/ip-lists/blacklist/
+/admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/block-ip-addresses/ /user-guides/ip-lists/blacklist/
+/admin-ru/scanner-ips-whitelisting/ /user-guides/ip-lists/whitelist/#examples-of-ip-whitelist-usage
+/admin-ru/configuration-guides/wallarm-ingress-controller/best-practices/whitelist-wallarm-ip-addresses/ /user-guides/ip-lists/whitelist/#examples-of-ip-whitelist-usage
+
+/partner-waf-node/overview/ /2.18/partner-waf-node/overview/ 301!
+/partner-waf-node/creating-partner-account/ /2.18/partner-waf-node/creating-partner-account/ 301!
+/partner-waf-node/connecting-clients/ /2.18/partner-waf-node/connecting-clients/ 301!
+/partner-waf-node/installing-partner-waf-node/ /2.18/partner-waf-node/installing-partner-waf-node/ 301!

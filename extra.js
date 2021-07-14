@@ -100,7 +100,7 @@ var sf14gv = 27823;
   })();
 
 // Show version selector only for WAF guides
-var rootVersion = '2.18';
+var rootVersion = '3.0';
 var activeLinks = document.getElementsByClassName('md-tabs__link--active');
 if (activeLinks[0].text === ' Инструкции ') {
   document.getElementById('versionsDiv').style.display = 'inline-block'
